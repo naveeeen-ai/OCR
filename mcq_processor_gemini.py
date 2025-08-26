@@ -47,34 +47,52 @@ def task1_format_mcqs():
     
     return formatted_content
 
-def task2_generate_answers(formatted_content):
-    """Task 2: Generate answers and explanations for each MCQ"""
-    print("Task 2: Generating answers and explanations...")
+def task2_generate_formatted_output(formatted_content):
+    """Task 2: Generate complete formatted output with answers and explanations"""
+    print("Task 2: Generating formatted output with answers and explanations...")
     
-    # Create prompt for answering
-    prompt = f"""For each MCQ below, provide:
-    1. The correct answer (A, B, C, or D)
-    2. A detailed explanation of why this is the correct answer
+    # Create prompt for complete formatting
+    prompt = f"""For each MCQ below, reformat it in the exact following structure:
+
+Question text
+A. Answer choice 1 text
+B. Answer choice 2 text
+C. Answer choice 3 text
+D. Answer choice 4 text
+Correct Answer text
+Explanation
+
+
+For each question, you need to:
+1. Extract the question text (without the question number)
+2. List each answer choice on a separate line with A., B., C., D. prefixes
+3. Provide the correct answer choice text (not just the letter)
+4. Provide a detailed explanation
+
+Example format:
+If the amount of acetylcholinesterase, an enzyme that breaks down acetylcholine, is increased, which of the following would likely be the result?
+A. Weakness of muscle movements
+B. Excessive pain or discomfort
+C. Mood swings and mood instability
+D. Auditory and visual hallucinations
+Weakness of muscle movements
+Acetylcholine is a neurotransmitter crucial for muscle contraction. Acetylcholinesterase breaks it down, terminating the signal. Increased acetylcholinesterase would lead to quicker breakdown of acetylcholine, resulting in weaker muscle contractions and ultimately, weakness of muscle movements.
+
+
+MCQs to format:
+{formatted_content}
+
+Format each question exactly as shown above:"""
     
-    Format your response as:
-    Question [number]: 
-    Answer: [letter]
-    Explanation: [detailed explanation]
-    
-    MCQs:
-    {formatted_content}
-    
-    Provide answers and explanations:"""
-    
-    # Get answers from Gemini
+    # Get formatted output from Gemini
     response = model.generate_content(prompt)
-    answers_content = response.text
+    formatted_output = response.text
     
-    # Save answers to a new file
-    write_file('mcq_answers.txt', answers_content)
-    print("Task 2 completed: Answers and explanations saved to mcq_answers.txt\n")
+    # Save formatted output to a new file
+    write_file('mcq_formatted_final.txt', formatted_output)
+    print("Task 2 completed: Formatted output saved to mcq_formatted_final.txt\n")
     
-    return answers_content
+    return formatted_output
 
 def task3_refine_questions(formatted_content):
     """Task 3: Refine questions while keeping choices unchanged"""
@@ -121,7 +139,7 @@ def main():
         formatted_content = task1_format_mcqs()
         
         # Execute Task 2
-        task2_generate_answers(formatted_content)
+        task2_generate_formatted_output(formatted_content)
         
         # Execute Task 3
         task3_refine_questions(formatted_content)
@@ -129,7 +147,7 @@ def main():
         print("All tasks completed successfully!")
         print("\nOutput files:")
         print("- output.txt: Formatted MCQs (Task 1)")
-        print("- mcq_answers.txt: Answers and explanations (Task 2)")
+        print("- mcq_formatted_final.txt: Formatted output with answers and explanations (Task 2)")
         print("- mcq_refined.txt: Refined questions with original choices (Task 3)")
         
     except Exception as e:
