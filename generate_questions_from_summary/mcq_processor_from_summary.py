@@ -1,18 +1,26 @@
 import os
+import re
 import pdfplumber
 from dotenv import load_dotenv
-import google.generativeai as genai
+from openai import OpenAI
 
 load_dotenv()
 
-# Configure Gemini AI
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-flash')
+# Configure OpenAI API
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+def get_openai_model():
+    """Return the configured OpenAI model, defaulting to a top-tier paid model."""
+    # You can override via OPENAI_MODEL in .env, e.g., gpt-4.1, gpt-4o
+    return os.getenv("OPENAI_MODEL", "gpt-4.1")
 
 def extract_text_from_pdf(pdf_path):
     """Extract text from PDF file"""
     text = ""
     try:
+        # Resolve path relative to this script so it works regardless of CWD
+        if not os.path.isabs(pdf_path):
+            pdf_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), pdf_path)
         with pdfplumber.open(pdf_path) as pdf:
             for page in pdf.pages:
                 page_text = page.extract_text()
@@ -24,59 +32,152 @@ def extract_text_from_pdf(pdf_path):
     return text
 
 def save_questions(filename, questions):
-    """Save questions to a file"""
-    with open(filename, 'w', encoding='utf-8') as f:
+    """Save questions to a file in the same folder as this script unless an absolute path is provided."""
+    target_path = filename
+    if not os.path.isabs(target_path):
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        target_path = os.path.join(base_dir, target_path)
+    with open(target_path, 'w', encoding='utf-8') as f:
         f.write(questions)
 
+def extract_numbered_points(text):
+    """Extract list points from text into a list of strings.
+    Supports numeric markers (1., 2), (3)), bullet glyphs (•, -, –, —), and PDF private-use glyph clusters like '' or ''.
+    Assumes each point starts at a new line and content may wrap to the next line until the next item marker.
+    """
+    # Normalize line endings and collapse multiple blank lines
+    normalized = re.sub(r"\r\n?|\u2028", "\n", text)
+    lines = normalized.split("\n")
+    points = []
+    current = []
+
+    numbered_pat = re.compile(r"^\s*(\d+\.|\d+\)|\(\d+\))\s+")
+    pua_bullet_pat = re.compile(r"^\s*[\uE000-\uF8FF]{1,10}\s+")  # Private Use Area cluster
+    std_bullet_pat = re.compile(r"^\s*[•◦▪‣\-–—]\s+")
+
+    def is_item_start(s):
+        return (
+            numbered_pat.match(s)
+            or pua_bullet_pat.match(s)
+            or std_bullet_pat.match(s)
+        ) is not None
+
+    def strip_marker(s):
+        s = numbered_pat.sub("", s)
+        s = pua_bullet_pat.sub("", s)
+        s = std_bullet_pat.sub("", s)
+        return s.strip()
+
+    for line in lines:
+        if is_item_start(line):
+            if current:
+                points.append(" ".join(current).strip())
+                current = []
+            content = strip_marker(line)
+            if content:
+                current.append(content)
+        else:
+            # continuation of previous point (if any)
+            if current:
+                if line.strip():
+                    current.append(line.strip())
+    if current:
+        points.append(" ".join(current).strip())
+
+    # Filter out empties and duplicates while preserving order
+    seen = set()
+    unique_points = []
+    for p in points:
+        if p and p not in seen:
+            seen.add(p)
+            unique_points.append(p)
+    return unique_points
+
+def generate_mcat_mcq_for_point(point_text):
+    """Generate one MCAT-style MCQ (question + 4 choices + answer + explanation) for a single point."""
+    prompt = f"""You are creating MCAT physics MCQs. Convert the following point into ONE conceptual MCAT-style multiple-choice question (no calculations, theoretical/conceptual focus), with exactly four distinct answer choices where only one is correct. Then provide the correct answer and a concise teaching explanation.
+
+Point:
+{point_text}
+
+STRICT OUTPUT FORMAT (no numbering, no extra blank lines, no markdown):
+Question text
+A. Answer choice 1 text
+B. Answer choice 2 text
+C. Answer choice 3 text
+D. Answer choice 4 text
+Answer: [Letter]. [Full correct answer text]
+Explanation: [1-3 sentences focusing on MCAT-relevant concept]
+
+Constraints:
+- Keep the question theoretical and concept-focused.
+- Ensure exactly four options A-D; only one is indisputably correct.
+- Use precise physics terminology suitable for MCAT.
+"""
+    response = client.chat.completions.create(
+        model=get_openai_model(),
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=500,
+        temperature=0.4
+    )
+    return response.choices[0].message.content.strip()
+
 def task1_generate_mcqs_from_summary():
-    """Task 1: Generate MCQs from PDF summary"""
-    print("Task 1: Generating MCQs from Kinematics and Dynamics summary...")
-    
-    # Extract text from PDF
+    """Generate one MCAT MCQ per numbered point in the PDF and save to summary_questions.txt."""
+    print("Task 1: Generating one MCQ per numbered point from PDF...")
+
     pdf_text = extract_text_from_pdf('kinematics_and_dynamics.pdf')
     if not pdf_text:
         print("Error: Could not extract text from PDF")
         return
+
+    points = extract_numbered_points(pdf_text)
+    if not points:
+        print("No numbered points were found in the PDF text.")
+        return
+
+    print(f"Found {len(points)} numbered points. Generating MCQs...")
+
+    outputs = []
+    mapping_rows = []  # (question_number, point_text)
+    for idx, point in enumerate(points, start=1):
+        try:
+            mcq = generate_mcat_mcq_for_point(point)
+            # Add numbering to the first non-empty line (question line)
+            lines = mcq.splitlines()
+            # find first non-empty line index
+            q_idx = None
+            for i, ln in enumerate(lines):
+                if ln.strip():
+                    q_idx = i
+                    break
+            if q_idx is not None:
+                lines[q_idx] = f"{idx}. {lines[q_idx].lstrip()}"
+            numbered_mcq = "\n".join(lines).strip()
+            outputs.append(numbered_mcq)
+            mapping_rows.append((idx, point))
+        except Exception as e:
+            print(f"Error generating MCQ for point {idx}: {e}")
+            continue
+
+    # Join MCQs with a single blank line between items to keep readability
+    final_output = "\n\n".join(outputs)
+    save_questions('summary_questions.txt', final_output)
     
-    # Create prompt for generating MCQs
-    prompt = f"""Based on the following physics summary about Kinematics and Dynamics, generate 15 comprehensive multiple-choice questions (MCQs) for MCAT exam preparation. 
+    # Save mapping table (Markdown) for validation
+    md_lines = [
+        "| Question # | Source Point |",
+        "|---:|---|",
+    ]
+    for qnum, pt in mapping_rows:
+        safe_point = pt.replace("|", "\\|")
+        md_lines.append(f"| {qnum} | {safe_point} |")
+    mapping_md = "\n".join(md_lines)
+    save_questions('points_to_questions.md', mapping_md)
 
-Make sure to cover various topics from the summary including:
-- Kinematics concepts (displacement, velocity, acceleration, motion equations)
-- Dynamics concepts (forces, Newton's laws, momentum, energy)
-- Mathematical relationships and formulas
-- Real-world applications and examples
-- MCAT-style problem-solving scenarios
-
-For each question, provide:
-1. A clear, educational question suitable for MCAT preparation
-2. Four answer choices (A, B, C, D)
-3. Make sure only one choice is clearly correct
-4. Include both conceptual and calculation-based questions typical of MCAT physics
-5. Focus on critical thinking and application skills required for MCAT
-
-Format each question as:
-Question text
-A. Answer choice 1 text
-B. Answer choice 2 text  
-C. Answer choice 3 text
-D. Answer choice 4 text
-
-
-Summary content:
-{pdf_text}
-
-Generate exactly 15 MCQs covering different aspects of kinematics and dynamics:"""
-    
-    # Get MCQs from Gemini
-    response = model.generate_content(prompt)
-    mcqs = response.text
-    
-    # Save to file
-    save_questions('summary_questions.txt', mcqs)
-    print("Task 1 completed: MCQs saved to summary_questions.txt\n")
-    
-    return mcqs
+    print(f"Task 1 completed: {len(outputs)} MCQs saved to summary_questions.txt")
+    print("Mapping saved to points_to_questions.md\n")
+    return final_output
 
 def task2_refine_questions(original_mcqs):
     """Task 2: Refine questions with same meaning and choices"""
@@ -103,9 +204,16 @@ D. Answer choice 4 text
 
 """
     
-    # Get refined questions from Gemini
-    response = model.generate_content(prompt)
-    refined_mcqs = response.text
+    # Get refined questions from OpenAI
+    response = client.chat.completions.create(
+        model=get_openai_model(),
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=4000,
+        temperature=0.7
+    )
+    refined_mcqs = response.choices[0].message.content
     
     # Save to file
     save_questions('refined_summary_questions.txt', refined_mcqs)
@@ -143,8 +251,15 @@ MCQs to process:
 
 Add correct answers and explanations for each question:"""
     
-    response_original = model.generate_content(prompt_original)
-    original_with_answers = response_original.text
+    response_original = client.chat.completions.create(
+        model=get_openai_model(),
+        messages=[
+            {"role": "user", "content": prompt_original}
+        ],
+        max_tokens=4000,
+        temperature=0.7
+    )
+    original_with_answers = response_original.choices[0].message.content
     
     # Process refined questions  
     prompt_refined = f"""For each of the following refined MCAT preparation MCQs, add the correct answer and detailed explanation.
@@ -165,8 +280,15 @@ MCQs to process:
 
 Add correct answers and explanations for each question:"""
     
-    response_refined = model.generate_content(prompt_refined)
-    refined_with_answers = response_refined.text
+    response_refined = client.chat.completions.create(
+        model=get_openai_model(),
+        messages=[
+            {"role": "user", "content": prompt_refined}
+        ],
+        max_tokens=4000,
+        temperature=0.7
+    )
+    refined_with_answers = response_refined.choices[0].message.content
     
     # Save updated files
     save_questions('summary_questions.txt', original_with_answers)
@@ -177,43 +299,24 @@ Add correct answers and explanations for each question:"""
     return original_with_answers, refined_with_answers
 
 def main():
-    """Main function to execute all tasks"""
-    print("Starting MCAT MCQ Generation from Kinematics and Dynamics Summary...\n")
-    
-    # Check if API key is set
-    if not os.getenv("GEMINI_API_KEY"):
-        print("ERROR: Please set your Gemini API key in the .env file")
-        print("\nTo get a FREE Gemini API key:")
-        print("1. Go to: https://aistudio.google.com/apikey")
-        print("2. Click 'Create API Key'")
-        print("3. Copy the key and add it to your .env file as: GEMINI_API_KEY=your_key_here")
+    """Main entrypoint: generate one MCQ per numbered point and write to summary_questions.txt."""
+    print("Starting MCQ generation from numbered points...\n")
+
+    if not os.getenv("OPENAI_API_KEY"):
+        print("ERROR: Please set your OpenAI API key in the .env file")
+        print("\nTo get an OpenAI API key:")
+        print("1. Go to: https://platform.openai.com/api-keys")
+        print("2. Click 'Create new secret key'")
+        print("3. Copy the key and add it to your .env file as: OPENAI_API_KEY=your_key_here")
         return
-    
+
     try:
-        # Execute Task 1: Generate MCQs
-        original_mcqs = task1_generate_mcqs_from_summary()
-        if not original_mcqs:
-            print("Failed to generate original MCQs")
-            return
-        
-        # Execute Task 2: Refine questions
-        refined_mcqs = task2_refine_questions(original_mcqs)
-        if not refined_mcqs:
-            print("Failed to refine MCQs")
-            return
-        
-        # Execute Task 3: Add answers and explanations
-        task3_add_answers_and_explanations(original_mcqs, refined_mcqs)
-        
-        print("All tasks completed successfully!")
-        print("\nMCAT Preparation Output files:")
-        print("- summary_questions.txt: Original MCAT MCQs with answers and explanations")
-        print("- refined_summary_questions.txt: Refined MCAT MCQs with answers and explanations")
-        
+        task1_generate_mcqs_from_summary()
+        print("Done. Output: summary_questions.txt")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         print("\nPlease check:")
-        print("1. Your Gemini API key is correctly set in the .env file")
+        print("1. Your OpenAI API key is correctly set in the .env file")
         print("2. You have an active internet connection")
         print("3. The PDF file exists and is readable")
 

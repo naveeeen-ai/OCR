@@ -13,7 +13,7 @@ This folder contains all MCQ (Multiple Choice Questions) related files that have
 - **`mcq_refined_with_answers.txt`** - Refined MCQs with answers and detailed explanations
 
 ### 🤖 Processing Script
-- **`mcq_processor_gemini.py`** - Python script using Google Gemini AI to:
+- **`mcq_processor_openai.py`** - Python script using OpenAI GPT to:
   - Format MCQs with proper numbering
   - Generate answers and explanations
   - Refine questions for better clarity
@@ -37,8 +37,8 @@ Detailed explanation
 ## Usage
 
 To process new MCQs:
-1. Make sure you have a `.env` file with your `GEMINI_API_KEY`
-2. Run: `python mcq_processor_gemini.py`
+1. Make sure you have a `.env` file with your `OPENAI_API_KEY`
+2. Run: `python mcq_processor_openai.py`
 3. Follow the prompts to select which task to perform
 
 ## Chapter Coverage

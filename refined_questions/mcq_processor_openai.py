@@ -1,14 +1,11 @@
 import os
 from dotenv import load_dotenv
-import google.generativeai as genai
+from openai import OpenAI
 
 load_dotenv()
 
-
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-
-# Initialize the model
-model = genai.GenerativeModel('gemini-1.5-flash')  # Free model with good performance
+# Configure OpenAI API
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 def read_file(filename):
     """Read content from a file"""
@@ -37,9 +34,16 @@ def task1_format_mcqs():
     
     Output the formatted MCQs:"""
     
-    # Get formatted output from Gemini
-    response = model.generate_content(prompt)
-    formatted_content = response.text
+    # Get formatted output from OpenAI
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=3000,
+        temperature=0.7
+    )
+    formatted_content = response.choices[0].message.content
     
     # Replace the content in output.txt
     write_file('output.txt', formatted_content)
@@ -84,9 +88,16 @@ MCQs to format:
 
 Format each question exactly as shown above:"""
     
-    # Get formatted output from Gemini
-    response = model.generate_content(prompt)
-    formatted_output = response.text
+    # Get formatted output from OpenAI
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=4000,
+        temperature=0.7
+    )
+    formatted_output = response.choices[0].message.content
     
     # Save formatted output to a new file
     write_file('mcq_formatted_final.txt', formatted_output)
@@ -111,9 +122,16 @@ def task3_refine_questions(formatted_content):
     
     Output the refined MCQs with improved questions but unchanged choices:"""
     
-    # Get refined questions from Gemini
-    response = model.generate_content(prompt)
-    refined_content = response.text
+    # Get refined questions from OpenAI
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=4000,
+        temperature=0.7
+    )
+    refined_content = response.choices[0].message.content
     
     # Save refined questions to a new file
     write_file('mcq_refined.txt', refined_content)
@@ -166,9 +184,16 @@ MCQs to format:
 
 Format each question exactly as shown above. REMEMBER: Every single question must include all four answer choices A, B, C, D before providing the correct answer:"""
     
-    # Get formatted output from Gemini
-    response = model.generate_content(prompt)
-    formatted_output = response.text
+    # Get formatted output from OpenAI
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=4000,
+        temperature=0.7
+    )
+    formatted_output = response.choices[0].message.content
     
     # Save formatted output to a new file
     write_file('mcq_refined_with_answers.txt', formatted_output)
@@ -178,15 +203,15 @@ Format each question exactly as shown above. REMEMBER: Every single question mus
 
 def main():
     """Main function to execute all tasks"""
-    print("Starting MCQ Processing with Gemini...\n")
+    print("Starting MCQ Processing with OpenAI...\n")
     
     # Check if API key is set
-    if not os.getenv("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY") == "your_gemini_api_key_here":
-        print("ERROR: Please set your Gemini API key in the .env file")
-        print("\nTo get a FREE Gemini API key:")
-        print("1. Go to: https://aistudio.google.com/apikey")
-        print("2. Click 'Create API Key'")
-        print("3. Copy the key and add it to your .env file as: GEMINI_API_KEY=your_key_here")
+    if not os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY") == "your_openai_api_key_here":
+        print("ERROR: Please set your OpenAI API key in the .env file")
+        print("\nTo get an OpenAI API key:")
+        print("1. Go to: https://platform.openai.com/api-keys")
+        print("2. Click 'Create new secret key'")
+        print("3. Copy the key and add it to your .env file as: OPENAI_API_KEY=your_key_here")
         return
     
     try:
@@ -216,9 +241,9 @@ def main():
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         print("\nPlease check:")
-        print("1. Your Gemini API key is correctly set in the .env file")
+        print("1. Your OpenAI API key is correctly set in the .env file")
         print("2. You have an active internet connection")
-        print("3. If you see quota errors, wait a minute and try again (free tier has rate limits)")
+        print("3. If you see quota errors, check your OpenAI usage and billing settings")
 
 if __name__ == "__main__":
     main()

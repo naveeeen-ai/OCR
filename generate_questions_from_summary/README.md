@@ -8,27 +8,28 @@ This module generates Multiple Choice Questions (MCQs) specifically designed for
 - **`kinematics_and_dynamics.pdf`** - Physics summary PDF containing bullet points on kinematics and dynamics concepts
 
 ### 🤖 Processing Script
-- **`mcq_processor_from_summary.py`** - Python script that uses Google Gemini AI to:
-  - Extract text from PDF summaries
-  - Generate comprehensive MCAT-style MCQs covering various topics
-  - Refine questions for better clarity and MCAT formatting
-  - Add correct answers and detailed explanations with MCAT context
+- **`mcq_processor_from_summary.py`** - Python script that uses OpenAI GPT to:
+  - Extract text from the PDF
+  - Parse numbered/bulleted points
+  - Generate exactly one MCAT-style MCQ per point
+  - Number each question (1., 2., 3., ...)
+  - Save a mapping table of Point → Question # for validation
 
-### 📋 Generated MCQ Files
-- **`summary_questions.txt`** - Original MCAT-style MCQs with answers and explanations (15 questions)
-- **`refined_summary_questions.txt`** - Refined MCAT-style MCQs with improved wording, same answers and explanations (15 questions)
+### 📋 Generated Files
+- **`summary_questions.txt`** - Numbered MCAT-style MCQs (one per source point)
+- **`points_to_questions.md`** - Markdown table mapping each source point to its question number
 
 ## MCQ Format
 
 Each question follows this structure:
 ```
-Question text
+N. Question text
 A. Answer choice 1 text
 B. Answer choice 2 text
 C. Answer choice 3 text
 D. Answer choice 4 text
-Correct Answer text with option letter
-Explanation
+Answer: [Letter]. [Full correct answer text]
+Explanation: [1–3 sentences]
 ```
 
 ## Topics Covered
@@ -52,16 +53,22 @@ The generated MCQs cover various aspects of:
 
 1. **Prerequisites:**
    ```bash
-   pip install google-generativeai python-dotenv pdfplumber
+   pip install openai python-dotenv pdfplumber
    ```
 
 2. **Setup:**
-   - Create a `.env` file with your Gemini API key:
+   - Create a `.env` file with your OpenAI API key:
      ```
-     GEMINI_API_KEY=your_api_key_here
+     OPENAI_API_KEY=your_api_key_here
      ```
 
-3. **Run the processor:**
+3. **Optional – choose a model (paid accounts):**
+   - Default model: `gpt-4.1`. To override, set in `.env` (e.g., `gpt-4o`, `gpt-4.1-mini`):
+     ```
+     OPENAI_MODEL=gpt-4o
+     ```
+
+4. **Run the processor:**
    ```bash
    cd generate_questions_from_summary
    python mcq_processor_from_summary.py
@@ -69,9 +76,10 @@ The generated MCQs cover various aspects of:
 
 ## Features
 
-✅ **Task 1:** Generate 15 comprehensive MCAT-style MCQs from PDF summary  
-✅ **Task 2:** Refine questions for better clarity and MCAT formatting while maintaining same meaning and choices  
-✅ **Task 3:** Add correct answers and detailed explanations with MCAT context to both sets of questions  
+✅ Parse numbered/bulleted points from the PDF  
+✅ Generate one conceptual MCAT-style MCQ per point  
+✅ Number questions for easier reference  
+✅ Save point → question mapping to validate coverage  
 
 ## Quality Assurance
 
@@ -81,8 +89,6 @@ The generated MCQs cover various aspects of:
 - **Clear Explanations:** Detailed explanations help understand the reasoning behind correct answers and MCAT problem-solving strategies
 - **Consistent Format:** Standardized format for easy reading and MCAT study preparation
 
-## AI Technology
-
-- **Google Gemini 1.5 Flash:** Used for text processing and question generation
+- **OpenAI GPT-4.1 (default, configurable via `OPENAI_MODEL`)**: Used for MCQ generation
 - **Smart PDF Processing:** Extracts and processes text from complex academic PDFs
 - **Context-Aware Generation:** Creates questions based on specific topic understanding

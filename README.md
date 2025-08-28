@@ -1,19 +1,19 @@
 # OCR MCQ Processor
 
-A Python-based tool that extracts Multiple Choice Questions (MCQs) from PDF documents using OCR technology and processes them with Google's Gemini AI for intelligent analysis and answer generation.
+A Python-based tool that extracts Multiple Choice Questions (MCQs) from PDF documents using OCR technology and processes them with OpenAI's GPT for intelligent analysis and answer generation.
 
 ## Features
 
 - **PDF Text Extraction**: Uses OCR to extract text from PDF documents
 - **MCQ Processing**: Automatically identifies and formats multiple choice questions
-- **AI-Powered Analysis**: Leverages Gemini AI for intelligent question processing
+- **AI-Powered Analysis**: Leverages OpenAI GPT for intelligent question processing
 - **Answer Generation**: Generates answers and explanations for MCQs
 - **Question Refinement**: Refines and improves question formatting
 
 ## Requirements
 
 - Python 3.7+
-- Google Gemini API key
+- OpenAI API key
 - Required Python packages (see requirements.txt)
 
 ## Installation
@@ -35,14 +35,14 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Set up your Gemini API key:
+4. Set up your OpenAI API key:
 ```bash
 # Create a .env file in the project root
-cp env.example .env
+cp .env.example .env
 
-# Edit .env and add your actual Gemini API key
-# Get your free API key from: https://aistudio.google.com/apikey
-GEMINI_API_KEY=your_actual_api_key_here
+# Edit .env and add your actual OpenAI API key
+# Get your API key from: https://platform.openai.com/api-keys
+OPENAI_API_KEY=your_actual_api_key_here
 ```
 
 ## Usage
@@ -52,9 +52,9 @@ GEMINI_API_KEY=your_actual_api_key_here
 python ocr.py
 ```
 
-### MCQ Processing with Gemini
+### MCQ Processing with OpenAI
 ```bash
-python mcq_processor_gemini.py
+python mcq_processor_openai.py
 ```
 
 ## Output Files
@@ -68,7 +68,7 @@ python mcq_processor_gemini.py
 ```
 ocr-mcq-processor/
 ├── ocr.py                    # Main OCR processing script
-├── mcq_processor_gemini.py  # MCQ processing with Gemini AI
+├── mcq_processor_openai.py  # MCQ processing with OpenAI GPT
 ├── test.pdf                 # Sample PDF for testing
 ├── output.txt               # Formatted MCQ output
 ├── mcq_answers.txt          # Generated answers
@@ -90,6 +90,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Google Gemini AI for intelligent MCQ processing
+- OpenAI GPT for intelligent MCQ processing
 - OCR libraries for PDF text extraction
 - Open source community for various dependencies
