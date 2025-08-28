@@ -93,14 +93,17 @@ def extract_numbered_points(text):
             unique_points.append(p)
     return unique_points
 
-def generate_mcat_mcq_for_point(point_text):
-    """Generate one MCAT-style MCQ (question + 4 choices + answer + explanation) for a single point."""
-    prompt = f"""You are creating MCAT physics MCQs. Convert the following point into ONE conceptual MCAT-style multiple-choice question (no calculations, theoretical/conceptual focus), with exactly four distinct answer choices where only one is correct. Then provide the correct answer and a concise teaching explanation.
+def generate_three_mcat_mcqs_for_point(point_text):
+    """Generate three distinct MCAT-style MCQs (each with 4 choices, answer, explanation) for a single point.
+    Returns a list of three MCQ strings. Ensures distinct question angles via prompt constraints.
+    """
+    prompt = f"""You will write THREE distinct MCAT physics multiple-choice questions based on ONE point.
+Each question must be conceptual/theoretical (no calculations) and must test a DIFFERENT facet or ask from a UNIQUE angle. Do NOT paraphrase the same question.
 
 Point:
 {point_text}
 
-STRICT OUTPUT FORMAT (no numbering, no extra blank lines, no markdown):
+STRICT OUTPUT FORMAT FOR EACH MCQ (no extra blank lines, no markdown):
 Question text
 A. Answer choice 1 text
 B. Answer choice 2 text
@@ -109,22 +112,50 @@ D. Answer choice 4 text
 Answer: [Letter]. [Full correct answer text]
 Explanation: [1-3 sentences focusing on MCAT-relevant concept]
 
-Constraints:
-- Keep the question theoretical and concept-focused.
-- Ensure exactly four options A-D; only one is indisputably correct.
-- Use precise physics terminology suitable for MCAT.
+CRITICAL CONSTRAINTS:
+- Produce EXACTLY THREE MCQs.
+- Each MCQ must assess a different perspective (definition vs. application vs. discrimination, etc.).
+- Ensure exactly four options A–D; only one option is indisputably correct.
+- Use precise MCAT-appropriate physics terminology.
+
+SEPARATION:
+- Separate the three MCQs with a single line containing only: ---
 """
     response = client.chat.completions.create(
         model=get_openai_model(),
         messages=[{"role": "user", "content": prompt}],
-        max_tokens=500,
-        temperature=0.4
+        max_tokens=1400,
+        temperature=0.45
     )
-    return response.choices[0].message.content.strip()
+    raw = response.choices[0].message.content.strip()
+
+    # Split on separator lines containing only ---
+    parts = []
+    buf = []
+    for line in raw.splitlines():
+        if line.strip() == '---':
+            if buf:
+                parts.append("\n".join(buf).strip())
+                buf = []
+        else:
+            buf.append(line)
+    if buf:
+        parts.append("\n".join(buf).strip())
+
+    # Fallback: if not exactly 3, attempt a simple heuristic split by double blank lines
+    if len(parts) != 3:
+        candidates = [blk.strip() for blk in raw.split("\n\n\n") if blk.strip()]
+        if len(candidates) == 3:
+            parts = candidates
+
+    # Trim and return up to 3 items
+    return [p.strip() for p in parts[:3]]
 
 def task1_generate_mcqs_from_summary():
-    """Generate one MCAT MCQ per numbered point in the PDF and save to summary_questions.txt."""
-    print("Task 1: Generating one MCQ per numbered point from PDF...")
+    """Generate three MCQs per numbered point and save to summary_questions_openai.txt with global numbering.
+    Also writes a point→question mapping table to points_to_questions.md.
+    """
+    print("Task 1: Generating 3 MCQs per numbered point from PDF...")
 
     pdf_text = extract_text_from_pdf('kinematics_and_dynamics.pdf')
     if not pdf_text:
@@ -139,43 +170,50 @@ def task1_generate_mcqs_from_summary():
     print(f"Found {len(points)} numbered points. Generating MCQs...")
 
     outputs = []
-    mapping_rows = []  # (question_number, point_text)
-    for idx, point in enumerate(points, start=1):
+    mapping_rows = []  # (point_text, [question_ids like 1a,1b,1c])
+    for p_idx, point in enumerate(points, start=1):
         try:
-            mcq = generate_mcat_mcq_for_point(point)
-            # Add numbering to the first non-empty line (question line)
-            lines = mcq.splitlines()
-            # find first non-empty line index
-            q_idx = None
-            for i, ln in enumerate(lines):
-                if ln.strip():
-                    q_idx = i
-                    break
-            if q_idx is not None:
-                lines[q_idx] = f"{idx}. {lines[q_idx].lstrip()}"
-            numbered_mcq = "\n".join(lines).strip()
-            outputs.append(numbered_mcq)
-            mapping_rows.append((idx, point))
+            mcqs = generate_three_mcat_mcqs_for_point(point)
+            assigned = []
+            letters = ['a', 'b', 'c']
+            for j, mcq in enumerate(mcqs):
+                if not mcq.strip():
+                    continue
+                lines = mcq.splitlines()
+                # find first non-empty line index
+                q_idx = None
+                for i, ln in enumerate(lines):
+                    if ln.strip():
+                        q_idx = i
+                        break
+                if q_idx is not None:
+                    label = f"{p_idx}{letters[j]}"
+                    lines[q_idx] = f"{label}. {lines[q_idx].lstrip()}"
+                numbered_mcq = "\n".join(lines).strip()
+                outputs.append(numbered_mcq)
+                assigned.append(f"{p_idx}{letters[j]}")
+            if assigned:
+                mapping_rows.append((point, assigned))
         except Exception as e:
-            print(f"Error generating MCQ for point {idx}: {e}")
+            print(f"Error generating MCQs for a point: {e}")
             continue
 
     # Join MCQs with a single blank line between items to keep readability
     final_output = "\n\n".join(outputs)
-    save_questions('summary_questions.txt', final_output)
+    save_questions('summary_questions_openai.txt', final_output)
     
     # Save mapping table (Markdown) for validation
     md_lines = [
-        "| Question # | Source Point |",
-        "|---:|---|",
+        "| Source Point | Question ID(s) |",
+        "|---|---|",
     ]
-    for qnum, pt in mapping_rows:
+    for pt, qnums in mapping_rows:
         safe_point = pt.replace("|", "\\|")
-        md_lines.append(f"| {qnum} | {safe_point} |")
+        md_lines.append(f"| {safe_point} | {', '.join(str(n) for n in qnums)} |")
     mapping_md = "\n".join(md_lines)
     save_questions('points_to_questions.md', mapping_md)
 
-    print(f"Task 1 completed: {len(outputs)} MCQs saved to summary_questions.txt")
+    print(f"Task 1 completed: {len(outputs)} MCQs saved to summary_questions_openai.txt")
     print("Mapping saved to points_to_questions.md\n")
     return final_output
 
@@ -216,8 +254,8 @@ D. Answer choice 4 text
     refined_mcqs = response.choices[0].message.content
     
     # Save to file
-    save_questions('refined_summary_questions.txt', refined_mcqs)
-    print("Task 2 completed: Refined questions saved to refined_summary_questions.txt\n")
+    save_questions('refined_summary_questions_openai.txt', refined_mcqs)
+    print("Task 2 completed: Refined questions saved to refined_summary_questions_openai.txt\n")
     
     return refined_mcqs
 
@@ -291,15 +329,15 @@ Add correct answers and explanations for each question:"""
     refined_with_answers = response_refined.choices[0].message.content
     
     # Save updated files
-    save_questions('summary_questions.txt', original_with_answers)
-    save_questions('refined_summary_questions.txt', refined_with_answers)
+    save_questions('summary_questions_openai.txt', original_with_answers)
+    save_questions('refined_summary_questions_openai.txt', refined_with_answers)
     
     print("Task 3 completed: Answers and explanations added to both files\n")
     
     return original_with_answers, refined_with_answers
 
 def main():
-    """Main entrypoint: generate one MCQ per numbered point and write to summary_questions.txt."""
+    """Main entrypoint: generate one MCQ per numbered point and write to summary_questions_openai.txt."""
     print("Starting MCQ generation from numbered points...\n")
 
     if not os.getenv("OPENAI_API_KEY"):
@@ -312,7 +350,7 @@ def main():
 
     try:
         task1_generate_mcqs_from_summary()
-        print("Done. Output: summary_questions.txt")
+        print("Done. Output: summary_questions_openai.txt")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         print("\nPlease check:")
