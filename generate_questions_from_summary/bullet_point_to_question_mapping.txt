@@ -1,12 +1,3 @@
-BULLET POINT TO QUESTION MAPPING - 36 SPECIFIC MCAT QUESTIONS
-================================================================================
-
-This table shows the 1:1 mapping between each physics bullet point from the 
-Kinematics and Dynamics PDF and its corresponding specific MCAT question.
-
-Starting Point: "The SI units include meter, kilogram, second, ampère, mole, kelvin, and candela."
-Ending Point: "Rotational equilibrium has constant angular velocity (usually zero on the MCAT)."
-
 FORMAT: Question# | Physics Bullet Point | Question Focus
 --------------------------------------------------------------------------------
 
