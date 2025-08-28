@@ -39,19 +39,21 @@ def task1_generate_mcqs_from_summary():
         return
     
     # Create prompt for generating MCQs
-    prompt = f"""Based on the following physics summary about Kinematics and Dynamics, generate 15 comprehensive multiple-choice questions (MCQs). 
+    prompt = f"""Based on the following physics summary about Kinematics and Dynamics, generate 15 comprehensive multiple-choice questions (MCQs) for MCAT exam preparation. 
 
 Make sure to cover various topics from the summary including:
 - Kinematics concepts (displacement, velocity, acceleration, motion equations)
 - Dynamics concepts (forces, Newton's laws, momentum, energy)
 - Mathematical relationships and formulas
 - Real-world applications and examples
+- MCAT-style problem-solving scenarios
 
 For each question, provide:
-1. A clear, educational question
+1. A clear, educational question suitable for MCAT preparation
 2. Four answer choices (A, B, C, D)
 3. Make sure only one choice is clearly correct
-4. Include both conceptual and calculation-based questions
+4. Include both conceptual and calculation-based questions typical of MCAT physics
+5. Focus on critical thinking and application skills required for MCAT
 
 Format each question as:
 Question text
@@ -80,13 +82,14 @@ def task2_refine_questions(original_mcqs):
     """Task 2: Refine questions with same meaning and choices"""
     print("Task 2: Refining questions...")
     
-    prompt = f"""Refine the following MCQs to improve clarity and wording while maintaining:
+    prompt = f"""Refine the following MCAT preparation MCQs to improve clarity and wording while maintaining:
 - EXACT same meaning for each question
 - EXACT same answer choices (A, B, C, D) - do not change any option text
-- Same level of difficulty
+- Same level of difficulty appropriate for MCAT exam
 - Better grammar and more professional language
+- MCAT-style question format and terminology
 
-Focus only on improving the question wording, not the choices.
+Focus only on improving the question wording for MCAT preparation, not the choices.
 
 Original MCQs:
 {original_mcqs}
@@ -115,7 +118,7 @@ def task3_add_answers_and_explanations(original_mcqs, refined_mcqs):
     print("Task 3: Adding answers and explanations...")
     
     # Process original questions
-    prompt_original = f"""For each of the following MCQs, add the correct answer and detailed explanation.
+    prompt_original = f"""For each of the following MCAT preparation MCQs, add the correct answer and detailed explanation.
 
 Format should be:
 Question text
@@ -133,7 +136,7 @@ B. a = (v - u) / t
 C. s = ut + (1/2)at²
 D. F = ma
 B. a = (v - u) / t
-Acceleration is defined as the rate of change of velocity with respect to time. The formula a = (v - u) / t represents this relationship where 'v' is final velocity, 'u' is initial velocity, and 't' is time.
+Acceleration is defined as the rate of change of velocity with respect to time. The formula a = (v - u) / t represents this relationship where 'v' is final velocity, 'u' is initial velocity, and 't' is time. This concept is fundamental for MCAT physics problems involving motion analysis.
 
 MCQs to process:
 {original_mcqs}
@@ -144,7 +147,7 @@ Add correct answers and explanations for each question:"""
     original_with_answers = response_original.text
     
     # Process refined questions  
-    prompt_refined = f"""For each of the following refined MCQs, add the correct answer and detailed explanation.
+    prompt_refined = f"""For each of the following refined MCAT preparation MCQs, add the correct answer and detailed explanation.
 
 Format should be:
 Question text
@@ -154,6 +157,8 @@ C. Answer choice 3 text
 D. Answer choice 4 text
 Correct Answer text with option letter
 Explanation
+
+Provide explanations that help MCAT test-takers understand the underlying physics concepts and problem-solving strategies.
 
 MCQs to process:
 {refined_mcqs}
@@ -173,7 +178,7 @@ Add correct answers and explanations for each question:"""
 
 def main():
     """Main function to execute all tasks"""
-    print("Starting MCQ Generation from Kinematics and Dynamics Summary...\n")
+    print("Starting MCAT MCQ Generation from Kinematics and Dynamics Summary...\n")
     
     # Check if API key is set
     if not os.getenv("GEMINI_API_KEY"):
@@ -201,9 +206,9 @@ def main():
         task3_add_answers_and_explanations(original_mcqs, refined_mcqs)
         
         print("All tasks completed successfully!")
-        print("\nOutput files:")
-        print("- summary_questions.txt: Original MCQs with answers and explanations")
-        print("- refined_summary_questions.txt: Refined MCQs with answers and explanations")
+        print("\nMCAT Preparation Output files:")
+        print("- summary_questions.txt: Original MCAT MCQs with answers and explanations")
+        print("- refined_summary_questions.txt: Refined MCAT MCQs with answers and explanations")
         
     except Exception as e:
         print(f"An error occurred: {str(e)}")

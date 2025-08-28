@@ -1,6 +1,6 @@
-# MCQ Generation from Summary
+# MCAT MCQ Generation from Summary
 
-This module generates Multiple Choice Questions (MCQs) from academic PDF summaries using AI.
+This module generates Multiple Choice Questions (MCQs) specifically designed for MCAT exam preparation from physics PDF summaries using AI.
 
 ## Files Description
 
@@ -10,13 +10,13 @@ This module generates Multiple Choice Questions (MCQs) from academic PDF summari
 ### 🤖 Processing Script
 - **`mcq_processor_from_summary.py`** - Python script that uses Google Gemini AI to:
   - Extract text from PDF summaries
-  - Generate comprehensive MCQs covering various topics
-  - Refine questions for better clarity
-  - Add correct answers and detailed explanations
+  - Generate comprehensive MCAT-style MCQs covering various topics
+  - Refine questions for better clarity and MCAT formatting
+  - Add correct answers and detailed explanations with MCAT context
 
 ### 📋 Generated MCQ Files
-- **`summary_questions.txt`** - Original MCQs with answers and explanations (15 questions)
-- **`refined_summary_questions.txt`** - Refined MCQs with improved wording, same answers and explanations (15 questions)
+- **`summary_questions.txt`** - Original MCAT-style MCQs with answers and explanations (15 questions)
+- **`refined_summary_questions.txt`** - Refined MCAT-style MCQs with improved wording, same answers and explanations (15 questions)
 
 ## MCQ Format
 
@@ -69,16 +69,17 @@ The generated MCQs cover various aspects of:
 
 ## Features
 
-✅ **Task 1:** Generate 15 comprehensive MCQs from PDF summary  
-✅ **Task 2:** Refine questions for better clarity while maintaining same meaning and choices  
-✅ **Task 3:** Add correct answers and detailed explanations to both sets of questions  
+✅ **Task 1:** Generate 15 comprehensive MCAT-style MCQs from PDF summary  
+✅ **Task 2:** Refine questions for better clarity and MCAT formatting while maintaining same meaning and choices  
+✅ **Task 3:** Add correct answers and detailed explanations with MCAT context to both sets of questions  
 
 ## Quality Assurance
 
-- **Comprehensive Coverage:** Questions span different difficulty levels and topic areas
-- **Accurate Content:** AI-generated answers verified against physics principles
-- **Clear Explanations:** Detailed explanations help understand the reasoning behind correct answers
-- **Consistent Format:** Standardized format for easy reading and study
+- **MCAT-Focused:** Questions designed specifically for MCAT physics preparation
+- **Comprehensive Coverage:** Questions span different difficulty levels and topic areas relevant to MCAT
+- **Accurate Content:** AI-generated answers verified against physics principles tested on MCAT
+- **Clear Explanations:** Detailed explanations help understand the reasoning behind correct answers and MCAT problem-solving strategies
+- **Consistent Format:** Standardized format for easy reading and MCAT study preparation
 
 ## AI Technology
 

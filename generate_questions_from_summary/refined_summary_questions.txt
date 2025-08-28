@@ -1,134 +1,119 @@
-**1.  A car travels 20 kilometers east and then 15 kilometers north.  Determine the magnitude of its displacement.**
-A. 5 km
-B. 25 km
-C. 35 km
-D. 17.7 km
-**Correct Answer: D**
-**Explanation:** Displacement is the shortest distance between the starting and ending points.  The eastward and northward movements form the legs of a right-angled triangle.  The displacement is the hypotenuse, calculated using the Pythagorean theorem: √(20² + 15²) = √(400 + 225) = √625 = 25 km.  The magnitude is 25km.  There appears to be a mistake in the options.  The correct answer should be 25km, but it's not listed.
+**1. A projectile is launched at an initial velocity of 20 m/s at a 30° angle above the horizontal.  Neglecting air resistance, what is the approximate vertical component of its initial velocity?**
+A. 10 m/s
+B. 17.3 m/s
+C. 20 m/s
+D. 0 m/s
+**Correct Answer: A. 10 m/s**
+**Explanation:** The vertical component of the initial velocity is given by v₀sinθ, where v₀ is the initial velocity (20 m/s) and θ is the launch angle (30°).  Therefore, the vertical component is 20 m/s * sin(30°) = 20 m/s * 0.5 = 10 m/s.
 
-
-**2. Identify the vector quantity from the following options.**
-A. Speed
-B. Mass
-C. Acceleration
-D. Time
-**Correct Answer: C**
-**Explanation:** A vector quantity has both magnitude and direction. Acceleration has both magnitude (how quickly velocity changes) and direction. Speed, mass, and time are scalar quantities (magnitude only).
-
-
-**3.  A ball is thrown vertically upward.  Ignoring air resistance, what is its acceleration at its highest point?**
-A. 0 m/s²
-B. 9.8 m/s² upward
-C. 9.8 m/s² downward
-D. -9.8 m/s² upward
-**Correct Answer: C**
-**Explanation:**  Even at its highest point where the velocity is momentarily zero, gravity continues to act on the ball, causing a constant downward acceleration of approximately 9.8 m/s².
-
-
-**4.  An object is in translational equilibrium under which of the following conditions?**
-A. It is at rest.
-B. It is moving at a constant velocity.
-C. The net force acting on it is zero.
-D. Both B and C.
-**Correct Answer: D**
-**Explanation:** Translational equilibrium means the object has no net force acting upon it. This occurs when an object is at rest or moving at a constant velocity (Newton's First Law).
-
-
-**5.  Calculate the acceleration of a 5-kilogram object experiencing a net force of 10 newtons.**
+**2. A 5 kg object is subject to a net force of 10 N.  What is its acceleration, according to Newton's second law of motion?**
 A. 0.5 m/s²
 B. 2 m/s²
-C. 50 m/s²
-D. 15 m/s²
-**Correct Answer: B**
-**Explanation:** Newton's second law states F = ma (Force = mass x acceleration).  Rearranging, a = F/m = 10 N / 5 kg = 2 m/s².
-
-
-**6.  State Newton's third law of motion.**
-A.  F = ma
-B. An object at rest stays at rest unless acted upon by a net force.
-C. For every action, there is an equal and opposite reaction.
-D. The acceleration of an object is directly proportional to the net force and inversely proportional to its mass.
-**Correct Answer: C**
-**Explanation:** This is the statement of Newton's third law:  For every action, there's an equal and opposite reaction.
-
-
-**7.  Calculate the work done when a 20-newton force moves an object 5 meters in the same direction.**
-A. 4 Nm
-B. 100 J
-C. 15 J
-D. 25 J
-**Correct Answer: B**
-**Explanation:** Work = Force x distance x cos(θ), where θ is the angle between the force and displacement. Since the force and displacement are in the same direction, θ = 0°, and cos(0°) = 1.  Therefore, Work = 20 N x 5 m = 100 J (Joules).
-
-
-**8.  A projectile is launched at an angle. Describe its velocity at its highest point.**
-A. Zero
-B. Only horizontal
-C. Only vertical
-D. Both horizontal and vertical
-**Correct Answer: B**
-**Explanation:** At the highest point, the vertical component of the projectile's velocity is zero. Only the horizontal component remains.
-
-
-**9.  Generally, how does the magnitude of static friction compare to that of kinetic friction?**
-A. Less
-B. Greater
-C. Equal
-D. Unrelated
-**Correct Answer: B**
-**Explanation:** Static friction (friction when an object is at rest) is generally greater than kinetic friction (friction when an object is in motion).
-
-
-**10. What physical quantity is represented by the slope of a velocity-time graph?**
-A. Displacement
-B. Velocity
-C. Acceleration
-D. Speed
-**Correct Answer: C**
-**Explanation:** The slope of a velocity-time graph represents the change in velocity over time, which is the definition of acceleration.
-
-
-**11.  Determine the momentum of a 10-kilogram object moving at 5 meters per second.**
-A. 2 kg⋅m/s
-B. 50 kg⋅m/s
-C. 25 kg⋅m/s
-D. 15 kg⋅m/s
-**Correct Answer: B**
-**Explanation:** Momentum (p) = mass (m) x velocity (v) = 10 kg x 5 m/s = 50 kg⋅m/s
-
-
-**12.  In uniform circular motion, specify the direction of the acceleration.**
-A. Tangential to the circle
-B. Towards the center of the circle
-C. Away from the center of the circle
-D. Opposite to the velocity
-**Correct Answer: B**
-**Explanation:** The acceleration in uniform circular motion is called centripetal acceleration, and it always points towards the center of the circle.
-
-
-**13.  What is the result of the dot product of two vectors when the angle between them is 90 degrees?**
-A. The product of their magnitudes
-B. Zero
-C. The product of their magnitudes and the sine of the angle
-D. The product of their magnitudes and the cosine of the angle
-**Correct Answer: B**
-**Explanation:** The dot product of two vectors is defined as A.B = |A||B|cos(θ). When θ = 90°, cos(90°) = 0, making the dot product zero.
-
-
-**14.  Which of the following scenarios exemplifies rotational equilibrium?**
-A. A spinning top
-B. A balanced seesaw
-C. A rolling ball
-D. A freely falling object
-**Correct Answer: B**
-**Explanation:** Rotational equilibrium means the net torque acting on an object is zero. A balanced seesaw has zero net torque.  The other options involve rotation and thus, are not in rotational equilibrium.
-
-
-**15.  Calculate the acceleration of a car that accelerates from rest to 20 meters per second in 5 seconds.**
-A. 4 m/s²
-B. 100 m/s²
 C. 5 m/s²
-D. 0.25 m/s²
-**Correct Answer: A**
-**Explanation:** Acceleration = (final velocity - initial velocity) / time = (20 m/s - 0 m/s) / 5 s = 4 m/s².
+D. 50 m/s²
+**Correct Answer: B. 2 m/s²**
+**Explanation:** Newton's second law states F = ma, where F is the net force, m is the mass, and a is the acceleration.  Solving for acceleration, a = F/m = 10 N / 5 kg = 2 m/s².
 
+**3. Two objects, one with mass m and the other with mass 2m, are released from the same height in a vacuum. Which object reaches the ground first?**
+A. The object with mass m
+B. The object with mass 2m
+C. They hit the ground simultaneously.
+D.  It depends on the shape of the objects.
+**Correct Answer: C. They hit the ground simultaneously.**
+**Explanation:** In a vacuum, there is no air resistance.  The acceleration due to gravity is the same for all objects regardless of their mass.  Therefore, both objects will fall at the same rate and hit the ground at the same time.
+
+**4. A car travels 100 km in 2 hours.  Calculate its average speed.**
+A. 200 km/hr
+B. 50 km/hr
+C. 25 km/hr
+D. 100 km/hr
+**Correct Answer: B. 50 km/hr**
+**Explanation:** Average speed is calculated as total distance divided by total time.  Average speed = 100 km / 2 hours = 50 km/hr.
+
+**5. A block rests on an inclined plane.  Identify the force preventing the block from sliding downward.**
+A.  Kinetic friction
+B.  Gravity
+C.  Normal force
+D.  Static friction
+**Correct Answer: D. Static friction**
+**Explanation:** Static friction is the force that opposes the initiation of motion between two surfaces in contact.  Since the block is at rest, it's static friction that prevents it from sliding down the inclined plane.
+
+**6. Determine the dot product of vectors A = (3i + 4j) and B = (2i - j), where i and j represent unit vectors.**
+A. 2
+B. 10
+C. 5i - j
+D. 6i - 4j
+**Correct Answer: A. 2**
+**Explanation:** The dot product is calculated by multiplying corresponding components and summing the results: (3 * 2) + (4 * -1) = 6 - 4 = 2.
+
+**7. A ball is thrown vertically upward. At its apex, what is its instantaneous velocity?**
+A.  Zero
+B.  Equal to its initial velocity
+C.  Equal to the acceleration due to gravity
+D.  Undefined
+**Correct Answer: A. Zero**
+**Explanation:** At the apex (highest point) of its trajectory, the ball momentarily stops before changing direction.  Its instantaneous velocity at that point is zero.
+
+**8.  What principle accounts for the outward force experienced by a person riding a merry-go-round?**
+A.  Centripetal force
+B.  Centrifugal force
+C.  Inertia
+D.  Gravitational force
+**Correct Answer: C. Inertia**
+**Explanation:** The outward force is not a real force but an apparent force due to inertia. The person's inertia causes them to want to continue moving in a straight line, while the merry-go-round forces them into a circular path.  Centripetal force is the real force causing the circular motion (directed towards the center).
+
+**9. A 10 kg mass is suspended from a rope.  Assuming g = 10 m/s², determine the tension in the rope.**
+A. 0 N
+B. 1 N
+C. 10 N
+D. 100 N
+**Correct Answer: D. 100 N**
+**Explanation:** The tension in the rope must balance the weight of the mass. Weight = mg = 10 kg * 10 m/s² = 100 N.
+
+**10.  An object is in a state of translational equilibrium.  Which statement must be true?**
+A.  The object is at rest.
+B.  The net force on the object is zero.
+C.  The object is not accelerating.
+D.  Both B and C.
+**Correct Answer: D. Both B and C.**
+**Explanation:** Translational equilibrium means the net force acting on the object is zero.  This implies the object is not accelerating (Newton's first law).  The object could be at rest or moving at a constant velocity.
+
+**11.  Identify the following quantity as a vector or scalar: acceleration.**
+A.  Speed
+B.  Mass
+C.  Acceleration
+D.  Energy
+**Correct Answer: C. Acceleration**
+**Explanation:** Acceleration is a vector quantity because it has both magnitude and direction.
+
+**12.  A car accelerates uniformly from rest to a final velocity of 20 m/s over 5 seconds. Determine its average acceleration.**
+A. 100 m/s²
+B. 4 m/s²
+C. 25 m/s²
+D. 0 m/s²
+**Correct Answer: B. 4 m/s²**
+**Explanation:** Average acceleration = (final velocity - initial velocity) / time = (20 m/s - 0 m/s) / 5 s = 4 m/s².
+
+**13. In projectile motion, neglecting air resistance, which velocity component remains constant?**
+A.  Vertical component
+B.  Horizontal component
+C.  Both components
+D.  Neither component
+**Correct Answer: B. Horizontal component**
+**Explanation:** Neglecting air resistance, only gravity acts on the projectile in the vertical direction.  The horizontal velocity remains constant because there is no horizontal force.
+
+**14. A 5 kg object moving at 10 m/s undergoes a perfectly inelastic collision with a stationary 10 kg object.  What is the approximate final velocity of the combined system?**
+A. 10 m/s
+B. 3.33 m/s
+C. 5 m/s
+D. 0 m/s
+**Correct Answer: B. 3.33 m/s**
+**Explanation:**  Conservation of momentum: (5 kg)(10 m/s) + (10 kg)(0 m/s) = (5 kg + 10 kg)v_f. Solving for v_f (final velocity): v_f = 3.33 m/s.
+
+**15. What is the name of the force that resists the motion of an object sliding across a surface?**
+A.  Normal force
+B.  Gravitational force
+C.  Kinetic friction
+D.  Static friction
+**Correct Answer: C. Kinetic friction**
+**Explanation:** Kinetic friction is the force that opposes the motion of an object already sliding across a surface.  Static friction opposes the *initiation* of motion.
