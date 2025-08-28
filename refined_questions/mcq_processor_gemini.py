@@ -121,8 +121,63 @@ def task3_refine_questions(formatted_content):
     
     return refined_content
 
+def task4_generate_answers_for_refined():
+    """Task 4: Generate answers and explanations for refined MCQs"""
+    print("Task 4: Generating answers and explanations for refined MCQs...")
+    
+    # Read the refined content
+    refined_content = read_file('mcq_refined.txt')
+    
+    # Create prompt for generating answers and explanations
+    prompt = f"""For each MCQ below, reformat it in the exact following structure:
+
+**Question [number]**
+
+Question text
+A. Answer choice 1 text
+B. Answer choice 2 text
+C. Answer choice 3 text
+D. Answer choice 4 text
+Correct Answer text with option letter
+Explanation
+
+
+CRITICAL REQUIREMENTS - MUST FOLLOW:
+1. Keep the question text exactly as provided
+2. ALWAYS include ALL FOUR answer choices (A, B, C, D) exactly as they appear in the original - NEVER skip any options
+3. Provide the correct answer with the option letter (e.g., "A. Weakness of muscle movements")
+4. Provide a detailed explanation
+5. Every question MUST have all four options A, B, C, D listed before the answer
+
+Example format:
+**Question 1**
+
+If the amount of acetylcholinesterase, an enzyme that breaks down acetylcholine, is increased, which of the following would likely be the result?
+A. Weakness of muscle movements
+B. Excessive pain or discomfort
+C. Mood swings and mood instability
+D. Auditory and visual hallucinations
+A.Weakness of muscle movements
+Acetylcholine is a neurotransmitter crucial for muscle contraction. Acetylcholinesterase breaks it down, terminating the signal. Increased acetylcholinesterase would lead to quicker breakdown of acetylcholine, resulting in weaker muscle contractions and ultimately, weakness of muscle movements.
+
+
+MCQs to format:
+{refined_content}
+
+Format each question exactly as shown above. REMEMBER: Every single question must include all four answer choices A, B, C, D before providing the correct answer:"""
+    
+    # Get formatted output from Gemini
+    response = model.generate_content(prompt)
+    formatted_output = response.text
+    
+    # Save formatted output to a new file
+    write_file('mcq_refined_with_answers.txt', formatted_output)
+    print("Task 4 completed: Refined MCQs with answers and explanations saved to mcq_refined_with_answers.txt\n")
+    
+    return formatted_output
+
 def main():
-    """Main function to execute all three tasks"""
+    """Main function to execute all tasks"""
     print("Starting MCQ Processing with Gemini...\n")
     
     # Check if API key is set
@@ -135,6 +190,14 @@ def main():
         return
     
     try:
+        # Check if user wants to run Task 4 only
+        if input("Do you want to generate answers for refined MCQs? (y/n): ").lower().startswith('y'):
+            task4_generate_answers_for_refined()
+            print("Task 4 completed!")
+            print("\nOutput file:")
+            print("- mcq_refined_with_answers.txt: Refined MCQs with answers and explanations")
+            return
+        
         # Execute Task 1
         formatted_content = task1_format_mcqs()
         

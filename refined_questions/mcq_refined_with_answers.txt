@@ -1,0 +1,75 @@
+**Question 1**
+
+What is the likely physiological consequence of increased acetylcholinesterase activity?
+A. Weakness of muscle movements
+B. Excessive pain or discomfort
+C. Mood swings and mood instability
+D. Auditory and visual hallucinations
+A. Weakness of muscle movements
+Acetylcholine is a neurotransmitter crucial for muscle contraction. Acetylcholinesterase breaks it down, terminating the signal. Increased acetylcholinesterase would lead to quicker breakdown of acetylcholine, resulting in weaker muscle contractions and ultimately, weakness of muscle movements.
+
+
+**Question 2**
+
+Which of the following functions is NOT performed by the adrenal glands?
+A. promote the fight-or-flight response via estrogen.
+B. produce stress responses via cortisol.
+C. produce both hormones and neurotransmitters.
+D. release estrogen in males and testosterone in females.
+A. promote the fight-or-flight response via estrogen.
+The adrenal glands play a crucial role in the stress response (B) primarily through cortisol production, and they produce both hormones and neurotransmitters (C). While they do release some sex hormones, it's not their primary function, and the statement in option D is inaccurate. Option A is incorrect because the fight-or-flight response is primarily mediated by adrenaline and noradrenaline, not estrogen. Estrogen is produced primarily by the ovaries in females.
+
+
+**Question 3**
+
+A malfunctioning pineal gland is most likely to manifest as which of the following conditions?
+A. High blood pressure
+B. Diabetes
+C. Insomnia
+D. Hyperthyroidism
+C. Insomnia
+The pineal gland produces melatonin, a hormone that regulates sleep-wake cycles.  A malfunctioning pineal gland would most likely disrupt melatonin production, leading to insomnia. High blood pressure (A), diabetes (B), and hyperthyroidism (D) are associated with other endocrine glands.
+
+
+**Question 4**
+
+Which neurotransmitter is implicated in the etiology of both schizophrenia and Parkinson's disease?
+A. GABA
+B. Serotonin
+C. Dopamine
+D. Enkephalins
+C. Dopamine
+Dopamine dysregulation is implicated in both schizophrenia (thought to involve excessive dopamine activity in certain brain regions) and Parkinson's disease (characterized by dopamine deficiency in the substantia nigra).
+
+
+**Question 5**
+
+In a personality study, which pair of twins would exhibit the highest degree of similarity in test scores?
+A. Identical twins raised in different homes
+B. Fraternal twins raised in different homes
+C. Identical twins raised in the same home
+D. Fraternal twins raised in the same home
+C. Identical twins raised in the same home
+Identical twins (monozygotic) share 100% of their genes.  While environment plays a role, identical twins raised in the same home will share the most similar environments, leading to the highest degree of similarity in personality traits and test scores compared to other twin pairings.
+
+
+**Question 6**
+
+A fifty-year-old patient with multiple sclerosis exhibits plantar flexion (toes curling downward) in response to plantar stimulation, without toe fanning.  How should this response be classified?
+A. abnormal, and evidence that she is exhibiting a primitive reflex.
+B. normal, and evidence that she is exhibiting a primitive reflex.
+C. abnormal, and evidence that she is not exhibiting a primitive reflex.
+D. normal, and evidence that she is not exhibiting a primitive reflex.
+A. abnormal, and evidence that she is exhibiting a primitive reflex.
+Plantar flexion without toe fanning (Babinski sign) is an abnormal response in adults.  The Babinski sign is a primitive reflex typically present in infants, but its presence in adults often indicates damage to the corticospinal tract, as seen in multiple sclerosis.
+
+
+**Question 7**
+
+Which of the following represents the earliest developing fine motor skill in infants?
+A. Grasping for objects with two fingers
+B. Following objects with the eyes
+C. Scribbling with a crayon
+D. Moving a toy from one hand to the other
+B. Following objects with the eyes
+Following objects with the eyes (visual tracking) is a very early developing visual-motor skill,  appearing in the first few months of life, well before the infant can demonstrate more complex fine motor skills like grasping with two fingers (A), scribbling (C), or transferring objects between hands (D).
