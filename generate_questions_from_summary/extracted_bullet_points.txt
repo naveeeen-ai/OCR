@@ -1,0 +1,36 @@
+1. The SI units include meter, kilogram, second, ampère, mole, kelvin, and candela.
+2. Vectors have both magnitude and direction.
+3. Scalars have only magnitude.
+4. Displacement is a vector representing change in position.
+5. Distance is a scalar representing path length.
+6. Velocity is the rate of change of displacement.
+7. Speed is the magnitude of velocity.
+8. Average velocity is total displacement divided by total time.
+9. Average speed is total distance divided by total time.
+10. Instantaneous velocity is the limit of Δdisplacement/Δtime as Δtime approaches zero.
+11. Instantaneous speed is the magnitude of instantaneous velocity.
+12. A force is a push or pull causing acceleration.
+13. Gravity is an attractive force between masses.
+14. Friction opposes motion due to surface interactions.
+15. Static friction acts on objects at rest relative to each other.
+16. Kinetic friction acts on objects in motion relative to each other.
+17. Kinetic friction is constant; static friction varies.
+18. The coefficient of friction depends on the materials in contact.
+19. The coefficient of static friction is greater than the coefficient of kinetic friction.
+20. Mass is a measure of inertia.
+21. Weight is the force due to gravity on an object.
+22. Acceleration is the rate of change of velocity.
+23. Newton's first law is the law of inertia.
+24. Newton's second law states F = ma.
+25. Newton's third law states that forces come in equal and opposite pairs.
+26. Linear motion has parallel or antiparallel velocity and acceleration vectors.
+27. Projectile motion involves both horizontal and vertical components.
+28. In projectile motion with negligible air resistance, only gravity acts.
+29. Inclined plane problems often involve parallel and perpendicular components.
+30. Circular motion involves radial and tangential components.
+31. In uniform circular motion, the only force is centripetal force.
+32. Free body diagrams represent forces acting on an object.
+33. Translational equilibrium means zero net force.
+34. An object in translational equilibrium has constant velocity.
+35. Rotational equilibrium means zero net torque.
+36. Rotational equilibrium has constant angular velocity (usually zero on the MCAT).

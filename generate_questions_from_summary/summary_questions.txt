@@ -1,133 +1,322 @@
-**1. A projectile is launched at an angle of 30° above the horizontal with an initial velocity of 20 m/s. Ignoring air resistance, what is the approximate vertical component of its initial velocity?**
-A. 10 m/s
-B. 17.3 m/s
-C. 20 m/s
-D. 0 m/s
-**Correct Answer: A. 10 m/s**
-**Explanation:** The vertical component of the initial velocity is given by V₀sinθ, where V₀ is the initial velocity (20 m/s) and θ is the launch angle (30°).  Therefore, the vertical component is 20 m/s * sin(30°) = 20 m/s * 0.5 = 10 m/s.  This is a fundamental concept in projectile motion; understanding vector decomposition is crucial for MCAT physics.
+**1. Which of the following is NOT an SI base unit?**
+A. Meter
+B. Kilogram
+C. Liter
+D. Second
+**Correct Answer: C. Liter**
+**Explanation:** The SI (International System of Units) base units are meter (length), kilogram (mass), second (time), ampere (electric current), kelvin (thermodynamic temperature), mole (amount of substance), and candela (luminous intensity). The liter is a unit of volume, derived from the cubic meter (m³).  This is a crucial concept for understanding unit conversions and dimensional analysis on the MCAT.
 
 
-**2. A 5 kg object experiences a net force of 10 N. According to Newton's second law, what is its acceleration?**
-A. 0.5 m/s²
-B. 2 m/s²
-C. 5 m/s²
-D. 50 m/s²
-**Correct Answer: B. 2 m/s²**
-**Explanation:** Newton's second law states F = ma, where F is the net force, m is the mass, and a is the acceleration.  Solving for acceleration, a = F/m = 10 N / 5 kg = 2 m/s². This is a direct application of a core physics principle frequently tested on the MCAT.
+**2. Which of the following best describes a vector quantity?**
+A. It has only magnitude.
+B. It has only direction.
+C. It has both magnitude and direction.
+D. It is dimensionless.
+**Correct Answer: C. It has both magnitude and direction.**
+**Explanation:** Vector quantities, unlike scalar quantities, possess both magnitude (size) and direction.  Understanding the difference between vectors (like velocity, force, acceleration) and scalars (like mass, speed, temperature) is fundamental to physics problem-solving on the MCAT.
 
 
-**3. Two objects, one with mass m and the other with mass 2m, are dropped from the same height in a vacuum. Which object hits the ground first?**
-A. The object with mass m
-B. The object with mass 2m
-C. They hit the ground simultaneously.
-D. It depends on the shape of the objects.
-**Correct Answer: C. They hit the ground simultaneously.**
-**Explanation:** In a vacuum, there is no air resistance.  Therefore, the only force acting on both objects is gravity, which causes both to accelerate at the same rate (g, approximately 9.8 m/s²), regardless of their mass. This demonstrates a key concept of gravitational acceleration.
+**3. Which of the following is a scalar quantity?**
+A. Velocity
+B. Force
+C. Mass
+D. Acceleration
+**Correct Answer: C. Mass**
+**Explanation:** Mass is a scalar quantity; it has magnitude but no direction. Velocity, force, and acceleration are all vector quantities.  This distinction is crucial for correctly applying equations and understanding physical phenomena.
 
 
-**4. A car travels 100 km in 2 hours. What is its average speed?**
-A. 200 km/hr
-B. 50 km/hr
-C. 25 km/hr
-D. 100 km/hr
-**Correct Answer: B. 50 km/hr**
-**Explanation:** Average speed is calculated as total distance divided by total time.  Average speed = 100 km / 2 hours = 50 km/hr.  This is a basic calculation, but understanding the difference between speed and velocity is important for the MCAT.
+**4. A car travels 5 km east and then 3 km west. What is its displacement?**
+A. 8 km east
+B. 2 km east
+C. 8 km west
+D. 2 km west
+**Correct Answer: B. 2 km east**
+**Explanation:** Displacement is a vector quantity representing the shortest distance between the starting and ending points.  The car's net movement is 2 km to the east (5 km east - 3 km west).  The MCAT often tests the understanding of displacement versus distance.
 
 
-**5. A block rests on an inclined plane. Which force is responsible for preventing the block from sliding down the plane?**
-A. Kinetic friction
-B. Gravity
-C. Normal force
-D. Static friction
-**Correct Answer: D. Static friction**
-**Explanation:** Static friction is the force that opposes the initiation of motion between two surfaces in contact.  Since the block is at rest, it's static friction that prevents it from sliding down the incline. Kinetic friction would only be relevant if the block were already sliding.
+**5. A car travels 5 km east and then 3 km west. What is the total distance traveled?**
+A. 2 km
+B. 8 km
+C. 5 km
+D. 3 km
+**Correct Answer: B. 8 km**
+**Explanation:** Distance is a scalar quantity representing the total ground covered. The car traveled 5 km + 3 km = 8 km in total.  This question highlights the difference between distance (scalar) and displacement (vector).
 
 
-**6. What is the dot product of two vectors, A = (3i + 4j) and B = (2i - 1j), where i and j are unit vectors?**
-A. 2
-B. 10
-C. 5i - j
-D. 6i - 4j
-**Correct Answer: A. 2**
-**Explanation:** The dot product is calculated as (3*2) + (4*-1) = 6 - 4 = 2.  Remember that the dot product results in a scalar value, not a vector.  Understanding vector operations is important for certain MCAT physics problems.
+**6. Which of the following best defines velocity?**
+A. The total distance traveled
+B. The rate of change of distance
+C. The rate of change of displacement
+D. The total displacement
+**Correct Answer: C. The rate of change of displacement**
+**Explanation:** Velocity is a vector quantity defined as the rate of change of displacement with respect to time.  It's crucial to remember the vector nature of velocity; it includes both speed and direction.
 
 
-**7. A ball is thrown straight upward. At its highest point, what is its instantaneous velocity?**
-A. Zero
-B. Equal to its initial velocity
-C. Equal to the acceleration due to gravity
-D. Undefined
-**Correct Answer: A. Zero**
-**Explanation:** At the highest point of its trajectory, the ball momentarily stops before changing direction.  Instantaneous velocity is zero at that specific point in time.  The acceleration due to gravity remains constant throughout the flight (-9.8 m/s²).
+**7. What is the relationship between speed and velocity?**
+A. Speed is the direction of velocity.
+B. Speed is the opposite of velocity.
+C. Speed is the magnitude of velocity.
+D. Speed is the square of velocity.
+**Correct Answer: C. Speed is the magnitude of velocity.**
+**Explanation:** Speed is the scalar magnitude of the velocity vector. Velocity includes both speed and direction; speed is just the "how fast" part.  This is a key distinction frequently tested on the MCAT.
 
 
-**8. What principle explains why a person feels a force pushing them outward when they are on a merry-go-round?**
-A. Centripetal force
-B. Centrifugal force
-C. Inertia
-D. Gravitational force
-**Correct Answer: C. Inertia**
-**Explanation:** The sensation of being pushed outward is due to inertia.  The person's body wants to continue moving in a straight line, but the merry-go-round forces it to move in a circle.  Centrifugal force is a fictitious force; the actual force is centripetal, which pulls the person inward.
+**8. A runner completes a 400-meter track in 60 seconds.  Assuming they finish at their starting point, what is their average velocity?**
+A.  400 m/s
+B. 6.67 m/s
+C. 0 m/s
+D.  Cannot be determined
+**Correct Answer: C. 0 m/s**
+**Explanation:** Average velocity is the total displacement divided by the total time. Since the runner finishes at the starting point, their total displacement is zero, resulting in an average velocity of 0 m/s.
 
 
-**9. A 10 kg mass hangs from a rope. What is the tension in the rope (assume g = 10 m/s²)?**
-A. 0 N
-B. 1 N
-C. 10 N
-D. 100 N
-**Correct Answer: D. 100 N**
-**Explanation:** The tension in the rope is equal to the weight of the mass. Weight = mg = 10 kg * 10 m/s² = 100 N.  Understanding forces in equilibrium is critical for the MCAT.
+**9. A runner runs 500 meters north, then 500 meters south in 100 seconds. What is their average speed?**
+A. 0 m/s
+B. 5 m/s
+C. 10 m/s
+D. 50 m/s
+**Correct Answer: C. 10 m/s**
+**Explanation:** Average speed is the total distance divided by the total time. The runner covers a total distance of 1000 meters (500 m north + 500 m south) in 100 seconds.  Therefore, the average speed is 1000 m / 100 s = 10 m/s.
 
 
-**10. An object is in translational equilibrium. Which of the following must be true?**
-A. The object is at rest.
-B. The net force on the object is zero.
-C. The object is not accelerating.
-D. Both B and C.
-**Correct Answer: D. Both B and C.**
-**Explanation:** Translational equilibrium means the net force acting on the object is zero. This implies that the object is either at rest or moving at a constant velocity (no acceleration).
+**10. Instantaneous velocity is best described as:**
+A. The average velocity over a long period.
+B. The velocity at a specific instant in time.
+C. The total displacement divided by total time.
+D. The change in velocity over time.
+**Correct Answer: B. The velocity at a specific instant in time.**
+**Explanation:** Instantaneous velocity is the velocity at a single point in time, as opposed to average velocity, which considers a time interval.
 
 
-**11. Which of the following is a vector quantity?**
-A. Speed
-B. Mass
-C. Acceleration
-D. Energy
-**Correct Answer: C. Acceleration**
-**Explanation:** Acceleration is a vector quantity because it has both magnitude and direction. Speed, mass, and energy are scalar quantities (magnitude only).
+**11. How does instantaneous speed relate to instantaneous velocity?**
+A. It is the direction of instantaneous velocity.
+B. It is the opposite of instantaneous velocity.
+C. It is the magnitude of instantaneous velocity.
+D. It is the inverse of instantaneous velocity.
+**Correct Answer: C. It is the magnitude of instantaneous velocity.**
+**Explanation:** Similar to the relationship between speed and velocity in general, instantaneous speed is simply the magnitude of the instantaneous velocity vector.
 
 
-**12. A car accelerates from rest to 20 m/s in 5 seconds. What is its average acceleration?**
-A. 100 m/s²
-B. 4 m/s²
-C. 25 m/s²
-D. 0 m/s²
-**Correct Answer: B. 4 m/s²**
-**Explanation:** Average acceleration = (change in velocity) / (change in time) = (20 m/s - 0 m/s) / 5 s = 4 m/s².
+**12. A force is fundamentally defined as:**
+A. An object's resistance to acceleration.
+B. A push or pull that can cause acceleration.
+C. The energy transferred to an object.
+D. The change in an object's momentum.
+**Correct Answer: B. A push or pull that can cause acceleration.**
+**Explanation:**  Force is the interaction that, when unopposed, will change the motion of an object.  This is a fundamental definition in Newtonian mechanics.  Inertia (A) is resistance to changes in motion, energy (C) is the capacity to do work, and momentum (D) is mass times velocity.
 
 
-**13. In projectile motion, which component of velocity remains constant (ignoring air resistance)?**
-A. Vertical component
-B. Horizontal component
-C. Both components
-D. Neither component
-**Correct Answer: B. Horizontal component**
-**Explanation:** Ignoring air resistance, only the horizontal component of velocity remains constant in projectile motion.  The vertical component changes due to gravity.
+**13. Gravity is best characterized as:**
+A. A repulsive force between objects.
+B. An attractive force between masses.
+C. A force that only acts on moving objects.
+D. A force that is independent of mass.
+**Correct Answer: B. An attractive force between masses.**
+**Explanation:** Newton's Law of Universal Gravitation describes gravity as an attractive force between any two masses. The strength of this force is directly proportional to the product of the masses and inversely proportional to the square of the distance between them.
 
 
-**14. A 5 kg object moving at 10 m/s collides with a stationary 10 kg object. Assuming a perfectly inelastic collision, what is the approximate final velocity of the two objects?**
-A. 10 m/s
-B. 3.33 m/s
-C. 5 m/s
-D. 0 m/s
-**Correct Answer: B. 3.33 m/s**
-**Explanation:** In a perfectly inelastic collision, momentum is conserved.  Initial momentum = (5 kg)(10 m/s) + (10 kg)(0 m/s) = 50 kg*m/s.  Final momentum = (5 kg + 10 kg) * v.  Setting initial and final momentum equal: 50 kg*m/s = 15 kg * v.  Solving for v: v ≈ 3.33 m/s.
+**14. Friction is primarily caused by:**
+A. The gravitational pull of the Earth.
+B. Interactions between surfaces in contact.
+C. The inertia of the moving object.
+D. Electromagnetic forces within the object.
+**Correct Answer: B. Interactions between surfaces in contact.**
+**Explanation:** Friction arises from the microscopic irregularities and interactions between the surfaces of two objects in contact.  These interactions involve electromagnetic forces.
 
 
-**15. What is the term for the force that opposes the motion of an object sliding across a surface?**
-A. Normal force
-B. Gravitational force
-C. Kinetic friction
-D. Static friction
-**Correct Answer: C. Kinetic friction**
-**Explanation:** Kinetic friction is the force that opposes motion between two surfaces that are already in relative motion.  Static friction opposes the *initiation* of motion.
+**15. Static friction is specifically defined as:**
+A. Friction between two surfaces that are sliding past each other.
+B. Friction that opposes impending motion between two surfaces at rest.
+C. The force required to keep an object in motion.
+D. Friction that is independent of the normal force.
+**Correct Answer: B. Friction that opposes impending motion between two surfaces at rest.**
+**Explanation:** Static friction prevents an object from starting to move. Once motion begins, kinetic friction takes over.
+
+
+**16. Kinetic friction acts when:**
+A. Objects are at rest relative to each other.
+B. Objects are moving relative to each other.
+C. There is no contact between objects.
+D. Only when objects are accelerating.
+**Correct Answer: B. Objects are moving relative to each other.**
+**Explanation:** Kinetic friction opposes motion between surfaces that are already sliding past each other.
+
+
+**17. A key difference between kinetic and static friction is that:**
+A. Kinetic friction is always greater than static friction.
+B. Kinetic friction varies with the normal force, while static friction is constant.
+C. Kinetic friction is a constant value, while static friction varies.
+D. Kinetic friction depends on velocity while static friction does not.
+**Correct Answer: A. Kinetic friction is always less than static friction.**
+**Explanation:** It requires more force to overcome static friction and initiate movement than to maintain movement against kinetic friction.  Both are proportional to the normal force.
+
+
+**18. Which statement regarding coefficients of friction is correct?**
+A. The coefficient of kinetic friction is greater than the coefficient of static friction.
+B. The coefficients of friction are dimensionless quantities.
+C. The coefficient of static friction is less than the coefficient of kinetic friction.
+D. The coefficient of friction is dependent on the area of contact.
+**Correct Answer: B. The coefficients of friction are dimensionless quantities.**
+**Explanation:** Coefficients of friction (μ) are ratios of forces and therefore have no units.  The coefficient of static friction is always greater than the coefficient of kinetic friction.
+
+
+**19. Mass is a measure of:**
+A. The force of gravity on an object.
+B. The amount of space an object occupies.
+C. An object's resistance to changes in motion.
+D. The object's density.
+**Correct Answer: C. An object's resistance to changes in motion.**
+**Explanation:** Mass is a measure of inertia – an object's resistance to acceleration. Weight (A) is the force of gravity, volume (B) is the amount of space, and density (D) is mass per unit volume.
+
+
+**20. Weight is best defined as:**
+A. The amount of matter in an object.
+B. The force due to gravity on an object's mass.
+C. An object's resistance to acceleration.
+D. A measure of an object's inertia.
+**Correct Answer: B. The force due to gravity on an object's mass.**
+**Explanation:** Weight is the force exerted on an object due to gravity.  It is a force, not a property of the object itself like mass.
+
+
+**21. Acceleration is defined as the rate of change of:**
+A. Displacement.
+B. Distance.
+C. Velocity.
+D. Speed.
+**Correct Answer: C. Velocity.**
+**Explanation:** Acceleration is a vector quantity representing the rate of change of velocity with respect to time.
+
+
+**22. Newton's first law of motion describes:**
+A. The relationship between force, mass, and acceleration.
+B. An object's tendency to maintain constant velocity unless acted upon by a net force.
+C. The action-reaction pairs of forces.
+D. The conservation of momentum.
+**Correct Answer: B. An object's tendency to maintain constant velocity unless acted upon by a net force.**
+**Explanation:** This is the law of inertia.
+
+
+**23. Newton's second law of motion is mathematically represented as:**
+A. F = mv
+B. F = ma
+C. F = Δp/Δt
+D. F = 1/2mv²
+**Correct Answer: B. F = ma**
+**Explanation:**  This equation relates force (F), mass (m), and acceleration (a).
+
+
+**24. Newton's third law states that:**
+A. Objects at rest stay at rest, objects in motion stay in motion.
+B. Force equals mass times acceleration.
+C. For every action, there is an equal and opposite reaction.
+D. The momentum of a system remains constant.
+**Correct Answer: C. For every action, there is an equal and opposite reaction.**
+**Explanation:** This describes action-reaction pairs.
+
+
+**25. In linear motion, the velocity and acceleration vectors are always:**
+A. Perpendicular
+B. At an angle
+C. Parallel or antiparallel
+D. Randomly oriented
+**Correct Answer: C. Parallel or antiparallel**
+**Explanation:** In linear motion, both vectors lie along the same line.
+
+
+**26. Which statement accurately describes projectile motion (neglecting air resistance)?**
+A. Only horizontal forces act on the projectile.
+B. Gravity is the only significant force acting on the projectile.
+C. The projectile's trajectory is a straight line.
+D. Air resistance significantly alters the path.
+**Correct Answer: B. Gravity is the only significant force acting on the projectile.**
+**Explanation:** Neglecting air resistance, only gravity acts on a projectile, resulting in a parabolic trajectory.
+
+
+**27. Analyzing inclined plane motion often involves resolving forces into components that are:**
+A. Parallel and perpendicular to the incline.
+B. Only parallel to the incline.
+C. Only perpendicular to the incline.
+D. At 45-degree angles to the incline.
+**Correct Answer: A. Parallel and perpendicular to the incline.**
+**Explanation:** This allows for easier calculation of forces along and perpendicular to the plane's surface.
+
+
+**28. Uniform circular motion requires a constant:**
+A. Tangential acceleration.
+B. Centripetal force directed radially inward.
+C. Velocity vector.
+D. Angular velocity.
+**Correct Answer: B. Centripetal force directed radially inward.**
+**Explanation:** The centripetal force constantly changes the direction of velocity, maintaining circular motion.
+
+
+**29. In uniform circular motion, the instantaneous velocity vector is always:**
+A. Radially inward.
+B. Radially outward.
+C. Tangential to the circular path.
+D. Perpendicular to the centripetal acceleration.
+**Correct Answer: C. Tangential to the circular path.**
+**Explanation:** The velocity vector is always tangent to the circular path at any given point.
+
+
+**30. A free-body diagram is a visual representation of:**
+A. The kinetic energy of an object.
+B. The momentum of an object.
+C. The forces acting on an object.
+D. The acceleration of an object.
+**Correct Answer: C. The forces acting on an object.**
+**Explanation:** A free-body diagram shows all the forces acting on a single object.
+
+
+**31. Translational equilibrium is achieved when:**
+A. There is a net torque acting on the object.
+B. There is no net force acting on the object.
+C. The object is accelerating.
+D. The object is rotating.
+**Correct Answer: B. There is no net force acting on the object.**
+**Explanation:**  In translational equilibrium, the object has no net force, meaning it is either at rest or moving at a constant velocity.
+
+
+**32. An object in translational equilibrium will have:**
+A. A constantly changing velocity.
+B. Constant acceleration.
+C. Constant velocity.
+D. Zero velocity.
+**Correct Answer: C. Constant velocity.**
+**Explanation:**  A net force of zero implies constant velocity (which can be zero).
+
+
+**33. Rotational equilibrium is achieved when:**
+A. There is a net force acting on the object.
+B. There is no net torque acting on the object.
+C. The object is accelerating linearly.
+D. The object has a changing angular velocity.
+**Correct Answer: B. There is no net torque acting on the object.**
+**Explanation:** Rotational equilibrium means the net torque is zero, indicating a constant angular velocity.
+
+
+**34. When considering rotational equilibrium, the choice of pivot point:**
+A. Must always be the center of mass.
+B. Is arbitrary, although the center of mass is a convenient choice.
+C. Must be a point on the object itself.
+D. Must be outside of the object.
+**Correct Answer: B. Is arbitrary, although the center of mass is a convenient choice.**
+**Explanation:** While the center of mass is often used for convenience, the pivot point can be chosen anywhere.
+
+
+**35. An object in rotational equilibrium has:**
+A. A constantly changing angular velocity.
+B. Constant angular acceleration.
+C. Constant angular velocity.
+D. Zero angular velocity.
+**Correct Answer: C. Constant angular velocity.**
+**Explanation:**  A net torque of zero means constant angular velocity (this could be zero).
+
+
+**36. On the MCAT, rotational equilibrium most often implies:**
+A. Constant, non-zero angular velocity.
+B. Constant angular acceleration.
+C. Constant angular velocity (usually zero).
+D. Variable angular velocity.
+**Correct Answer: C. Constant angular velocity (usually zero).**
+**Explanation:** While constant, non-zero angular velocity is possible, static equilibrium (zero angular velocity) is more commonly tested on the MCAT in rotational equilibrium problems.
