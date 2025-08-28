@@ -1,322 +1,288 @@
-**1. Identify the option that is NOT an SI base unit.**
-A. Meter
-B. Kilogram
-C. Liter
-D. Second
-**Correct Answer: C. Liter**
-**Explanation:** The SI base units are meter (length), kilogram (mass), second (time), ampere (electric current), kelvin (thermodynamic temperature), mole (amount of substance), and candela (luminous intensity).  A liter is a unit of volume, derived from the cubic meter (m³).  1 liter = 0.001 m³.
+**1. Which of the following is not a base SI unit?**
+A. Ampere
+B. Liter
+C. Kelvin
+D. Mole
+**Correct Answer: B. Liter**
+**Explanation:** The International System of Units (SI) has seven base units: meter (length), kilogram (mass), second (time), ampere (electric current), kelvin (thermodynamic temperature), mole (amount of substance), and candela (luminous intensity). The liter is a derived unit, equal to a cubic decimeter (dm³), and therefore not a base unit.
 
+**2. Which of the following best characterizes a vector quantity?**
+A. A quantity with only a numerical value.
+B. A quantity with both magnitude and direction.
+C. A quantity that describes temperature.
+D. A quantity that represents time.
+**Correct Answer: B. A quantity with both magnitude and direction.**
+**Explanation:** A vector quantity possesses both magnitude (size or amount) and direction.  Scalar quantities, in contrast, have only magnitude.  Temperature and time are scalar quantities.
 
-**2. Which of the following characteristics defines a vector quantity?**
-A. It has only magnitude.
-B. It has only direction.
-C. It has both magnitude and direction.
-D. It is dimensionless.
-**Correct Answer: C. It has both magnitude and direction.**
-**Explanation:** A vector quantity is fully described by both its magnitude (size) and its direction.  Scalar quantities have only magnitude.
+**3. Which of the following is a characteristic of a scalar quantity?**
+A. It has both magnitude and direction.
+B. It describes acceleration.
+C. It has only magnitude.
+D. It is always represented by a vector.
+**Correct Answer: C. It has only magnitude.**
+**Explanation:** Scalar quantities are fully described by their magnitude (size or amount) alone. They lack directional information.  Acceleration is a vector quantity.
 
+**4. Displacement is best described as:**
+A. The total distance traveled.
+B. A vector quantity indicating the change in position.
+C. A scalar quantity representing the path length.
+D. The instantaneous rate of change in position.
+**Correct Answer: B. A vector quantity indicating the change in position.**
+**Explanation:** Displacement is a vector quantity because it specifies both the magnitude (how far an object has moved from its initial position) and the direction of that change in position.  It is not concerned with the path taken, only the net change in position.
 
-**3. Which of the following is correctly classified as a scalar quantity?**
-A. Velocity
-B. Force
-C. Mass
-D. Acceleration
-**Correct Answer: C. Mass**
-**Explanation:** Mass is a scalar quantity; it has only magnitude. Velocity, force, and acceleration are all vector quantities because they possess both magnitude and direction.
-
-
-**4. A car travels 5 kilometers east and then 3 kilometers west. Determine its displacement.**
-A. 8 km east
-B. 2 km east
-C. 8 km west
-D. 2 km west
-**Correct Answer: B. 2 km east**
-**Explanation:** Displacement is a vector quantity representing the shortest distance between the starting and ending points.  The car's net eastward movement is 5 km - 3 km = 2 km.
-
-
-**5. A car travels 5 kilometers east and then 3 kilometers west. Calculate the total distance traveled.**
-A. 2 km
-B. 8 km
-C. 5 km
-D. 3 km
-**Correct Answer: B. 8 km**
-**Explanation:** Distance is a scalar quantity representing the total length of the path traveled. The car traveled 5 km + 3 km = 8 km.
-
-
-**6. Provide the most accurate definition of velocity.**
-A. The total distance traveled
-B. The rate of change of distance
-C. The rate of change of displacement
-D. The total displacement
-**Correct Answer: C. The rate of change of displacement**
-**Explanation:** Velocity is a vector quantity defined as the rate of change of displacement with respect to time.
-
-
-**7. Describe the relationship between speed and velocity.**
-A. Speed is the direction of velocity.
-B. Speed is the opposite of velocity.
-C. Speed is the magnitude of velocity.
-D. Speed is the square of velocity.
-**Correct Answer: C. Speed is the magnitude of velocity.**
-**Explanation:** Speed is the scalar magnitude of the velocity vector. Velocity includes both speed and direction.
-
-
-**8. A runner completes a 400-meter track race in 60 seconds, returning to their starting point. What is their average velocity?**
-A. 400 m/s
-B. 6.67 m/s
-C. 0 m/s
-D. Cannot be determined
-**Correct Answer: C. 0 m/s**
-**Explanation:** Average velocity is the total displacement divided by the total time. Since the runner returns to their starting point, their displacement is zero, resulting in an average velocity of 0 m/s.
-
-
-**9. A runner travels 500 meters north, then 500 meters south in 100 seconds. Calculate their average speed.**
-A. 0 m/s
-B. 5 m/s
-C. 10 m/s
-D. 50 m/s
-**Correct Answer: C. 10 m/s**
-**Explanation:** Average speed is the total distance divided by the total time. The runner traveled a total distance of 1000 meters (500 m + 500 m) in 100 seconds.  Therefore, the average speed is 1000 m / 100 s = 10 m/s.
-
-
-**10. Which statement provides the most accurate description of instantaneous velocity?**
-A. The average velocity over a long period.
-B. The velocity at a specific instant in time.
-C. The total displacement divided by total time.
+**5. Distance is best defined as:**
+A. A vector quantity representing the change in position.
+B. The total path length traveled.
+C. The rate of change of displacement.
 D. The change in velocity over time.
-**Correct Answer: B. The velocity at a specific instant in time.**
-**Explanation:** Instantaneous velocity is the velocity at a particular moment in time.
+**Correct Answer: B. The total path length traveled.**
+**Explanation:** Distance is a scalar quantity representing the total length of the path traveled by an object, irrespective of direction.
 
+**6. Velocity can be conceptually defined as:**
+A. The total distance traveled divided by the time taken.
+B. The rate of change of speed.
+C. The vector rate of change of displacement.
+D. A scalar quantity representing the rate of motion.
+**Correct Answer: C. The vector rate of change of displacement.**
+**Explanation:** Velocity is a vector quantity representing the rate of change of displacement. It indicates both the speed and the direction of motion.  Speed, on the other hand, is a scalar.
 
-**11. How does instantaneous speed relate to instantaneous velocity?**
-A. It is the direction of instantaneous velocity.
-B. It is the opposite of instantaneous velocity.
-C. It is the magnitude of instantaneous velocity.
-D. It is the inverse of instantaneous velocity.
-**Correct Answer: C. It is the magnitude of instantaneous velocity.**
-**Explanation:** Instantaneous speed is the magnitude of the instantaneous velocity vector.
+**7. How is speed fundamentally related to velocity?**
+A. Speed is the vector representation of velocity.
+B. Speed is the direction of velocity.
+C. Speed is the magnitude of velocity.
+D. Speed and velocity are unrelated concepts.
+**Correct Answer: C. Speed is the magnitude of velocity.**
+**Explanation:** Speed is the scalar magnitude of the velocity vector. Velocity incorporates both speed and direction.
 
+**8. Average velocity is defined as:**
+A. The total distance divided by the total time.
+B. The instantaneous velocity at a specific time.
+C. The total displacement divided by the total time.
+D. The change in velocity over time.
+**Correct Answer: C. The total displacement divided by the total time.**
+**Explanation:** Average velocity considers the net change in position (displacement) over the total time interval.
 
-**12. Provide a fundamental definition of force.**
-A. An object's resistance to acceleration.
+**9. Average speed is defined as:**
+A. The total displacement divided by the total time.
+B. The total distance divided by the total time.
+C. The vector rate of change of displacement.
+D. The instantaneous speed at a given moment.
+**Correct Answer: B. The total distance divided by the total time.**
+**Explanation:** Average speed is a scalar quantity calculated by dividing the total distance traveled by the total time taken.
+
+**10. Instantaneous velocity is conceptually defined as:**
+A. The average velocity over a long period.
+B. The limit of the change in displacement divided by the change in time, as the change in time approaches zero.
+C. The total displacement divided by the total time.
+D. The speed at any given moment.
+**Correct Answer: B. The limit of the change in displacement divided by the change in time, as the change in time approaches zero.**
+**Explanation:** Instantaneous velocity represents the velocity at a specific instant in time.  It's the derivative of displacement with respect to time.
+
+**11. Instantaneous speed is best defined as:**
+A. The average speed over a period of time.
+B. The magnitude of instantaneous velocity.
+C. The direction of instantaneous velocity.
+D. The total distance divided by the total time.
+**Correct Answer: B. The magnitude of instantaneous velocity.**
+**Explanation:** Instantaneous speed is the magnitude of the instantaneous velocity vector at a particular instant.
+
+**12. A force, fundamentally, is:**
+A. An object in motion.
 B. A push or pull that can cause acceleration.
-C. The energy transferred to an object.
-D. The change in an object's momentum.
+C. The measure of an object's inertia.
+D. The energy possessed by an object.
 **Correct Answer: B. A push or pull that can cause acceleration.**
-**Explanation:** Force is an interaction that, when unopposed, will change the motion of an object.  This change in motion is acceleration.
+**Explanation:** A force is an interaction that, when unopposed, will change the motion of an object.  This change in motion is acceleration.
+
+**13. Gravity is best described as:**
+A. A repulsive force between masses.
+B. A force that opposes motion between surfaces.
+C. An attractive force between masses.
+D. A force that causes objects to move at a constant speed.
+**Correct Answer: C. An attractive force between masses.**
+**Explanation:** Gravity is a fundamental force of attraction between any two objects with mass.
+
+**14. Friction is fundamentally a force that:**
+A. Aids motion between surfaces.
+B. Opposes motion due to surface interactions.
+C. Always acts perpendicular to a surface.
+D. Is independent of surface properties.
+**Correct Answer: B. Opposes motion due to surface interactions.**
+**Explanation:** Friction is a force that resists the relative motion or tendency to relative motion of two surfaces in contact.
+
+**15. Static friction acts on objects that are:**
+A. In motion relative to each other.
+B. At rest relative to each other.
+C. Accelerating relative to each other.
+D. Moving at constant velocity relative to each other.
+**Correct Answer: B. At rest relative to each other.**
+**Explanation:** Static friction prevents the initiation of motion between two surfaces in contact that are at rest relative to each other.
+
+**16. Kinetic friction acts on objects that are:**
+A. At rest relative to each other.
+B. In motion relative to each other.
+C. Experiencing no relative motion.
+D. Only moving vertically.
+**Correct Answer: B. In motion relative to each other.**
+**Explanation:** Kinetic friction opposes the motion of two surfaces sliding past each other.
+
+**17. What is the fundamental difference between kinetic and static friction?**
+A. Kinetic friction varies with applied force; static friction is constant.
+B. Kinetic friction is always greater than static friction.
+C. Kinetic friction is constant; static friction varies with applied force.
+D. Kinetic and static friction are always equal.
+**Correct Answer: C. Kinetic friction is constant; static friction varies with applied force.**
+**Explanation:**  Static friction adjusts up to a maximum value (μsN) to oppose an applied force, while kinetic friction is a constant value (μkN) once motion begins.  The maximum static friction is usually greater than kinetic friction.
+
+**18. The coefficient of friction is primarily determined by:**
+A. The mass of the objects involved.
+B. The velocity of the objects involved.
+C. The materials in contact.
+D. The acceleration of the objects.
+**Correct Answer: C. The materials in contact.**
+**Explanation:** The coefficient of friction (μ) is a dimensionless constant that depends on the nature of the surfaces in contact.
+
+**19. The coefficient of static friction is typically:**
+A. Less than the coefficient of kinetic friction.
+B. Equal to the coefficient of kinetic friction.
+C. Greater than the coefficient of kinetic friction.
+D. Independent of the coefficient of kinetic friction.
+**Correct Answer: C. Greater than the coefficient of kinetic friction.**
+**Explanation:** It generally requires more force to start an object moving (static friction) than to keep it moving (kinetic friction).
 
 
-**13. Select the best characterization of gravity.**
-A. A repulsive force between objects.
-B. An attractive force between masses.
-C. A force that only acts on moving objects.
-D. A force that is independent of mass.
-**Correct Answer: B. An attractive force between masses.**
-**Explanation:** Gravity is an attractive force between any two objects with mass.  The force is proportional to the product of the masses and inversely proportional to the square of the distance between them.
+**20. From a physics perspective, mass is best understood as:**
+A. A measure of an object's weight.
+B. A measure of an object's inertia.
+C. The force of gravity on an object.
+D. The volume occupied by an object.
+**Correct Answer: B. A measure of an object's inertia.**
+**Explanation:** Mass is a fundamental property of matter that quantifies its resistance to changes in motion (inertia).
 
-
-**14. What is the primary cause of friction?**
-A. The gravitational pull of the Earth.
-B. Interactions between surfaces in contact.
-C. The inertia of the moving object.
-D. Electromagnetic forces within the object.
-**Correct Answer: B. Interactions between surfaces in contact.**
-**Explanation:** Friction arises from the interactions between the microscopic irregularities of surfaces in contact.
-
-
-**15. Provide a precise definition of static friction.**
-A. Friction between two surfaces that are sliding past each other.
-B. Friction that opposes impending motion between two surfaces at rest.
-C. The force required to keep an object in motion.
-D. Friction that is independent of the normal force.
-**Correct Answer: B. Friction that opposes impending motion between two surfaces at rest.**
-**Explanation:** Static friction is the force that prevents two surfaces from sliding past each other while they are at rest.
-
-
-**16. Under what conditions does kinetic friction act?**
-A. Objects are at rest relative to each other.
-B. Objects are moving relative to each other.
-C. There is no contact between objects.
-D. Only when objects are accelerating.
-**Correct Answer: B. Objects are moving relative to each other.**
-**Explanation:** Kinetic friction acts when two surfaces are sliding past each other.
-
-
-**17. Identify a key difference between kinetic and static friction.**
-A. Kinetic friction is always greater than static friction.
-B. Kinetic friction varies with the normal force, while static friction is constant.
-C. Kinetic friction is a constant value, while static friction varies.
-D. Kinetic friction depends on velocity while static friction does not.
-**Correct Answer: A. Kinetic friction is always less than static friction.**
-**Explanation:**  It requires more force to start an object moving (overcome static friction) than to keep it moving (kinetic friction).  Both vary with the normal force.
-
-
-**18. Which statement accurately describes coefficients of friction?**
-A. The coefficient of kinetic friction is greater than the coefficient of static friction.
-B. The coefficients of friction are dimensionless quantities.
-C. The coefficient of static friction is less than the coefficient of kinetic friction.
-D. The coefficient of friction is dependent on the area of contact.
-**Correct Answer: B. The coefficients of friction are dimensionless quantities.**
-**Explanation:** Coefficients of friction (μ) are ratios of forces and therefore dimensionless.  The coefficient of static friction is *greater* than the coefficient of kinetic friction. The coefficient of friction is independent of the area of contact (for most materials).
-
-
-**19. Mass is a quantitative measure of:**
-A. The force of gravity on an object.
-B. The amount of space an object occupies.
-C. An object's resistance to changes in motion.
-D. The object's density.
-**Correct Answer: C. An object's resistance to changes in motion.**
-**Explanation:** Mass is a measure of inertia—an object's resistance to changes in its velocity.
-
-
-**20. Provide the most accurate definition of weight.**
+**21. In physics, weight is defined as:**
 A. The amount of matter in an object.
 B. The force due to gravity on an object's mass.
-C. An object's resistance to acceleration.
-D. A measure of an object's inertia.
+C. A measure of an object's resistance to acceleration.
+D. The volume of an object.
 **Correct Answer: B. The force due to gravity on an object's mass.**
-**Explanation:** Weight is the gravitational force acting on an object's mass.
+**Explanation:** Weight is a force, specifically the gravitational force acting on an object's mass.
 
+**22. Acceleration is conceptually defined as:**
+A. The change in position over time.
+B. The vector rate of change of velocity.
+C. The total distance traveled divided by the time taken.
+D. A scalar quantity representing the rate of motion.
+**Correct Answer: B. The vector rate of change of velocity.**
+**Explanation:** Acceleration is a vector quantity representing the rate at which velocity changes over time.
 
-**21. Acceleration is defined as the rate of change of:**
-A. Displacement.
-B. Distance.
-C. Velocity.
-D. Speed.
-**Correct Answer: C. Velocity.**
-**Explanation:** Acceleration is a vector quantity representing the rate of change of velocity with respect to time.
+**23. Newton's First Law of Motion primarily states that:**
+A. F=ma
+B. An object in motion stays in motion unless acted on by a net force.
+C. For every action, there's an equal and opposite reaction.
+D. The acceleration of an object is proportional to the net force acting on it.
+**Correct Answer: B. An object in motion stays in motion unless acted on by a net force.**
+**Explanation:** Newton's First Law (Inertia) describes the tendency of an object to resist changes in its state of motion.
 
+**24. Newton's Second Law of Motion describes the relationship between:**
+A. Velocity and time.
+B. Distance and time.
+C. Net force, mass, and acceleration.
+D. Inertia and momentum.
+**Correct Answer: C. Net force, mass, and acceleration.**
+**Explanation:** Newton's Second Law (F=ma) states that the net force acting on an object is equal to the product of its mass and acceleration.
 
-**22. Newton's first law of motion describes which concept?**
-A. The relationship between force, mass, and acceleration.
-B. An object's tendency to maintain constant velocity unless acted upon by a net force.
-C. The action-reaction pairs of forces.
-D. The conservation of momentum.
-**Correct Answer: B. An object's tendency to maintain constant velocity unless acted upon by a net force.**
-**Explanation:** Newton's first law is the law of inertia.
+**25. Newton's Third Law of Motion pertains to:**
+A. The relationship between force and acceleration.
+B. The conservation of energy.
+C. Action-reaction pairs of forces.
+D. The concept of inertia.
+**Correct Answer: C. Action-reaction pairs of forces.**
+**Explanation:** Newton's Third Law states that for every action, there is an equal and opposite reaction.
 
+**26. Linear motion is characterized by:**
+A. Perpendicular velocity and acceleration vectors.
+B. Velocity and acceleration vectors at an arbitrary angle.
+C. Parallel or antiparallel velocity and acceleration vectors.
+D. Circular trajectory.
+**Correct Answer: C. Parallel or antiparallel velocity and acceleration vectors.**
+**Explanation:** In linear motion, the velocity and acceleration vectors are either parallel (same direction, object speeding up) or antiparallel (opposite directions, object slowing down).
 
-**23. Which equation correctly represents Newton's second law of motion?**
-A. F = mv
-B. F = ma
-C. F = Δp/Δt
-D. F = 1/2mv²
-**Correct Answer: B. F = ma**
-**Explanation:** Newton's second law states that the net force acting on an object is equal to the product of its mass and acceleration.
+**27. Projectile motion, neglecting air resistance, is primarily governed by:**
+A. A variety of forces including air resistance and friction.
+B. The initial velocity and angle of projection, and gravity.
+C. The surface area of the projectile.
+D. The mass and shape of the projectile.
+**Correct Answer: B. The initial velocity and angle of projection, and gravity.**
+**Explanation:**  Neglecting air resistance, only gravity acts on a projectile, influencing its trajectory based on its initial conditions.
 
+**28. Analyzing motion on an inclined plane requires:**
+A. Considering only the vertical component of gravity.
+B. Using components parallel and perpendicular to the plane.
+C. Ignoring the effects of gravity.
+D. Applying only Newton's first law.
+**Correct Answer: B. Using components parallel and perpendicular to the plane.**
+**Explanation:**  To analyze forces and motion on an inclined plane, resolve the gravitational force into components parallel and perpendicular to the plane's surface.
 
-**24. State Newton's third law of motion.**
-A. Objects at rest stay at rest, objects in motion stay in motion.
-B. Force equals mass times acceleration.
-C. For every action, there is an equal and opposite reaction.
-D. The momentum of a system remains constant.
-**Correct Answer: C. For every action, there is an equal and opposite reaction.**
-**Explanation:** Newton's third law describes action-reaction pairs.
+**29. Uniform circular motion necessitates a net force that is:**
+A. Tangential to the circle.
+B. Directed radially outward.
+C. Directed radially inward.
+D. Zero.
+**Correct Answer: C. Directed radially inward.**
+**Explanation:** This inward force (centripetal force) constantly changes the direction of the velocity vector, keeping the object moving in a circle.
 
+**30. In uniform circular motion, the instantaneous velocity vector is always:**
+A. Directed toward the center of the circle.
+B. Directed away from the center of the circle.
+C. Tangential to the circle.
+D. Perpendicular to the plane of the circle.
+**Correct Answer: C. Tangential to the circle.**
+**Explanation:** The velocity is always tangent to the circular path.
 
-**25. In linear motion, how are the velocity and acceleration vectors oriented?**
-A. Perpendicular
-B. At an angle
-C. Parallel or antiparallel
-D. Randomly oriented
-**Correct Answer: C. Parallel or antiparallel**
-**Explanation:** In linear motion, the velocity and acceleration vectors are either in the same direction (parallel, object speeding up) or opposite directions (antiparallel, object slowing down).
+**31. A free-body diagram visually represents:**
+A. The motion of an object.
+B. The forces acting on an object.
+C. The energy of an object.
+D. The momentum of an object.
+**Correct Answer: B. The forces acting on an object.**
+**Explanation:** Free-body diagrams show all the forces acting on a single object, simplifying force analysis.
 
+**32. Translational equilibrium exists when:**
+A. There's a net torque.
+B. There's a net force.
+C. There's no net force.
+D. There's constant acceleration.
+**Correct Answer: C. There's no net force.**
+**Explanation:** Translational equilibrium means the net force acting on an object is zero, resulting in no change in its linear velocity.
 
-**26. Which statement correctly describes projectile motion, neglecting air resistance?**
-A. Only horizontal forces act on the projectile.
-B. Gravity is the only significant force acting on the projectile.
-C. The projectile's trajectory is a straight line.
-D. Air resistance significantly alters the path.
-**Correct Answer: B. Gravity is the only significant force acting on the projectile.**
-**Explanation:** Neglecting air resistance, only gravity acts on a projectile.
+**33. An object in translational equilibrium will always exhibit:**
+A. Zero velocity.
+B. Constant velocity.
+C. Constant acceleration.
+D. Changing velocity.
+**Correct Answer: B. Constant velocity.**
+**Explanation:** With no net force, the object's velocity remains constant (it can be zero or any constant value).
 
+**34. Rotational equilibrium is achieved when:**
+A. There's a net force.
+B. There's no net force.
+C. There's no net torque.
+D. There's constant angular acceleration.
+**Correct Answer: C. There's no net torque.**
+**Explanation:** Rotational equilibrium occurs when the net torque acting on an object is zero, meaning no change in its rotational motion.
 
-**27. When analyzing inclined plane motion, forces are typically resolved into components that are:**
-A. Parallel and perpendicular to the incline.
-B. Only parallel to the incline.
-C. Only perpendicular to the incline.
-D. At 45-degree angles to the incline.
-**Correct Answer: A. Parallel and perpendicular to the incline.**
-**Explanation:** Resolving forces into components parallel and perpendicular to the incline simplifies calculations.
-
-
-**28. Uniform circular motion necessitates a constant:**
-A. Tangential acceleration.
-B. Centripetal force directed radially inward.
-C. Velocity vector.
-D. Angular velocity.
-**Correct Answer: B. Centripetal force directed radially inward.**
-**Explanation:**  A centripetal force is required to keep an object moving in a circle; without it, the object would move in a straight line.  Velocity is constantly changing direction.
-
-
-**29. In uniform circular motion, the instantaneous velocity vector is always:**
-A. Radially inward.
-B. Radially outward.
-C. Tangential to the circular path.
-D. Perpendicular to the centripetal acceleration.
-**Correct Answer: C. Tangential to the circular path.**
-**Explanation:** The velocity vector is always tangent to the circular path at any given point.
-
-
-**30. A free-body diagram provides a visual representation of:**
-A. The kinetic energy of an object.
-B. The momentum of an object.
-C. The forces acting on an object.
-D. The acceleration of an object.
-**Correct Answer: C. The forces acting on an object.**
-**Explanation:** A free-body diagram shows all the forces acting on a single object.
-
-
-**31. Translational equilibrium is achieved under which condition?**
-A. There is a net torque acting on the object.
-B. There is no net force acting on the object.
-C. The object is accelerating.
-D. The object is rotating.
-**Correct Answer: B. There is no net force acting on the object.**
-**Explanation:** Translational equilibrium means the net force on an object is zero.
-
-
-**32. An object in translational equilibrium will exhibit:**
-A. A constantly changing velocity.
-B. Constant acceleration.
-C. Constant velocity.
-D. Zero velocity.
-**Correct Answer: C. Constant velocity.**
-**Explanation:**  If the net force is zero, the acceleration is zero, meaning the velocity remains constant (it could be zero velocity, but it doesn't have to be).
-
-
-**33. Rotational equilibrium is achieved when:**
-A. There is a net force acting on the object.
-B. There is no net torque acting on the object.
-C. The object is accelerating linearly.
-D. The object has a changing angular velocity.
-**Correct Answer: B. There is no net torque acting on the object.**
-**Explanation:** Rotational equilibrium means the net torque on an object is zero.
-
-
-**34. When analyzing rotational equilibrium, the selection of the pivot point:**
-A. Must always be the center of mass.
-B. Is arbitrary, although the center of mass is a convenient choice.
-C. Must be a point on the object itself.
-D. Must be outside of the object.
-**Correct Answer: B. Is arbitrary, although the center of mass is a convenient choice.**
-**Explanation:** The choice of pivot point is arbitrary for calculating net torque; however, using the center of mass often simplifies calculations.
-
-
-**35. An object in rotational equilibrium possesses:**
-A. A constantly changing angular velocity.
-B. Constant angular acceleration.
+**35. An object in rotational equilibrium maintains:**
+A. Constant angular acceleration.
+B. Changing angular velocity.
 C. Constant angular velocity.
-D. Zero angular velocity.
+D. Zero angular momentum.
 **Correct Answer: C. Constant angular velocity.**
-**Explanation:**  If the net torque is zero, the angular acceleration is zero, meaning the angular velocity remains constant (it could be zero angular velocity, but it doesn't have to be).
-
+**Explanation:**  No net torque means no change in angular velocity; it remains constant.
 
 **36. In the context of the MCAT, rotational equilibrium most often implies:**
 A. Constant, non-zero angular velocity.
 B. Constant angular acceleration.
 C. Constant angular velocity (usually zero).
-D. Variable angular velocity.
+D. An absence of any rotational motion.
 **Correct Answer: C. Constant angular velocity (usually zero).**
-**Explanation:** While technically constant angular velocity is possible, the MCAT often focuses on scenarios where the object is at rest, implying zero angular velocity.
+**Explanation:** While constant, non-zero angular velocity is possible, MCAT questions often focus on situations where the object is at rest rotationally (zero angular velocity).

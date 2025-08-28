@@ -115,26 +115,33 @@ def task1_generate_mcqs_from_summary():
     if len(bullet_points) != 36:
         print(f"Warning: Expected 36 bullet points, got {len(bullet_points)}")
     
-    # Create specific MCAT questions for each bullet point
-    prompt = f"""Create exactly one specific MCAT-style multiple choice question for each physics bullet point listed below. 
+    # Create specific theoretical MCAT questions for each bullet point
+    prompt = f"""Create exactly one specific THEORETICAL MCAT-style multiple choice question for each physics bullet point listed below. 
 
 CRITICAL REQUIREMENTS:
-1. Each question must be SPECIFIC to the individual bullet point concept (not general)
-2. Each question must have EXACTLY 4 answer choices (A, B, C, D)
-3. Only ONE choice should be definitively correct
-4. Use proper MCAT-style terminology and complexity
-5. Focus on conceptual understanding suitable for MCAT exam preparation
-6. NO mathematical calculations - focus on definitions, principles, and understanding
+1. Each question must be PURELY THEORETICAL - NO numerical calculations, NO math problems
+2. Each question must be SPECIFIC to the individual bullet point concept (not general)
+3. Each question must have EXACTLY 4 answer choices (A, B, C, D)
+4. Only ONE choice should be definitively correct
+5. Use proper MCAT-style terminology and complexity
+6. Focus ONLY on definitions, principles, concepts, and theoretical understanding
 
-MCAT Question Types:
+THEORETICAL MCAT Question Types ONLY:
 - Definition and concept identification questions
-- Cause-and-effect relationships
-- Comparison between related concepts  
-- Application of principles to scenarios
-- Classification of physics phenomena
-- Conceptual understanding of laws/principles
+- Theoretical principles and laws
+- Conceptual relationships between physics concepts
+- Classification of physics phenomena (vector vs scalar, types of forces, etc.)
+- Theoretical understanding of physics laws and principles
+- Conceptual applications without numerical values
+- Qualitative comparisons and relationships
 
-For each bullet point below, create ONE specific question that directly tests that concept.
+STRICTLY AVOID:
+- Any numerical calculations or math problems
+- Questions requiring specific numerical values
+- Problems involving formulas with numbers
+- Quantitative analysis or computations
+
+For each bullet point below, create ONE purely theoretical question that tests conceptual understanding.
 
 Format each question EXACTLY as:
 **Question number. Question text**
@@ -145,10 +152,10 @@ D. Answer choice 4 text
 
 IMPORTANT: Do NOT include answers or explanations in this step - only questions and choices.
 
-Physics Bullet Points (create one specific question for each):
+Physics Bullet Points (create one theoretical question for each):
 {chr(10).join(f"{i+1}. {bp}" for i, bp in enumerate(bullet_points))}
 
-Generate exactly {len(bullet_points)} specific MCAT questions (one for each bullet point above):"""
+Generate exactly {len(bullet_points)} purely theoretical MCAT questions (one for each bullet point above):"""
     
     # Get MCQs from Gemini
     response = model.generate_content(prompt)
@@ -209,14 +216,15 @@ def task3_add_answers_and_explanations_enhanced(original_mcqs, refined_mcqs):
     """Task 3: Add answers with enhanced validation and cross-checking"""
     print("Task 3: Adding answers and explanations with enhanced validation...")
     
-    # Process original questions with enhanced prompt
-    prompt_original = f"""For each of the following MCAT preparation MCQs, add the correct answer and detailed explanation.
+    # Process original questions with enhanced prompt for theoretical questions
+    prompt_original = f"""For each of the following THEORETICAL MCAT preparation MCQs, add the correct answer and detailed explanation.
 
-CRITICAL ACCURACY REQUIREMENTS:
-1. Double-check all physics concepts and calculations
-2. Ensure only ONE answer choice is definitively correct
-3. Verify answers against fundamental physics principles
+CRITICAL ACCURACY REQUIREMENTS FOR THEORETICAL QUESTIONS:
+1. Double-check all physics concepts and theoretical principles
+2. Ensure only ONE answer choice is definitively correct based on physics theory
+3. Verify answers against fundamental physics definitions and principles
 4. Provide clear, educational explanations suitable for MCAT preparation
+5. Focus on conceptual understanding, NOT mathematical calculations
 
 Format should be:
 **Question number. Question text**
@@ -225,41 +233,43 @@ B. Answer choice 2 text
 C. Answer choice 3 text
 D. Answer choice 4 text
 **Correct Answer: [Letter]. [Full answer text]**
-**Explanation:** [Detailed explanation with MCAT context]
+**Explanation:** [Detailed theoretical explanation with MCAT context]
 
-Example format:
-**1. What is the formula for acceleration?**
-A. v = u + at
-B. a = (v - u) / t
-C. s = ut + (1/2)at²
-D. F = ma
-**Correct Answer: B. a = (v - u) / t**
-**Explanation:** Acceleration is defined as the rate of change of velocity with respect to time. The formula a = (v - u) / t represents this relationship where 'v' is final velocity, 'u' is initial velocity, and 't' is time. This concept is fundamental for MCAT physics problems involving motion analysis.
+Example format for theoretical question:
+**1. Which of the following best describes a vector quantity?**
+A. It has only magnitude
+B. It has only direction
+C. It has both magnitude and direction
+D. It is dimensionless
+**Correct Answer: C. It has both magnitude and direction**
+**Explanation:** A vector quantity is defined as having both magnitude (size) and direction. This distinguishes vectors from scalar quantities, which have only magnitude. Understanding this fundamental distinction is crucial for MCAT physics, as it affects how quantities are added, subtracted, and analyzed in physics problems.
 
 VALIDATION CHECKLIST before providing answer:
-- Is the physics concept correct?
-- Is only one choice definitively right?
-- Does the explanation help MCAT preparation?
-- Are calculations accurate?
+- Is the physics concept/definition correct?
+- Is only one choice definitively right based on theory?
+- Does the explanation focus on conceptual understanding?
+- Is the explanation helpful for MCAT preparation?
+- Does it avoid unnecessary mathematical complexity?
 
-MCQs to process:
+Theoretical MCQs to process:
 {original_mcqs}
 
-Add correct answers and explanations for each question:"""
+Add correct answers and theoretical explanations for each question:"""
     
     response_original = model.generate_content(prompt_original)
     original_with_answers = response_original.text
     
-    # Process refined questions with cross-validation
-    prompt_refined = f"""For each of the following refined MCAT preparation MCQs, add the correct answer and detailed explanation.
+    # Process refined questions with cross-validation for theoretical focus
+    prompt_refined = f"""For each of the following refined THEORETICAL MCAT preparation MCQs, add the correct answer and detailed explanation.
 
-IMPORTANT: Cross-reference with the original questions to ensure answer consistency.
+IMPORTANT: Cross-reference with the original questions to ensure answer consistency and maintain theoretical focus.
 
-CRITICAL VALIDATION:
-1. Verify answers are scientifically correct
-2. Ensure explanations are MCAT-appropriate
+CRITICAL VALIDATION FOR THEORETICAL QUESTIONS:
+1. Verify answers are scientifically correct based on physics theory
+2. Ensure explanations emphasize conceptual understanding for MCAT
 3. Double-check that only one choice is definitively correct
-4. Maintain consistency with physics principles
+4. Maintain consistency with physics principles and definitions
+5. Focus on theoretical understanding rather than calculations
 
 Format should be:
 **Question number. Question text**
@@ -268,12 +278,12 @@ B. Answer choice 2 text
 C. Answer choice 3 text
 D. Answer choice 4 text
 **Correct Answer: [Letter]. [Full answer text]**
-**Explanation:** [Detailed explanation helping MCAT test-takers understand the physics concepts and problem-solving strategies]
+**Explanation:** [Detailed theoretical explanation helping MCAT test-takers understand physics concepts and principles]
 
-MCQs to process:
+Refined Theoretical MCQs to process:
 {refined_mcqs}
 
-Add correct answers and explanations for each question:"""
+Add correct answers and theoretical explanations for each question:"""
     
     response_refined = model.generate_content(prompt_refined)
     refined_with_answers = response_refined.text
