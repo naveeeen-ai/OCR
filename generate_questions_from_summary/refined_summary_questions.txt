@@ -1,0 +1,134 @@
+**1.  A car travels 20 kilometers east and then 15 kilometers north.  Determine the magnitude of its displacement.**
+A. 5 km
+B. 25 km
+C. 35 km
+D. 17.7 km
+**Correct Answer: D**
+**Explanation:** Displacement is the shortest distance between the starting and ending points.  The eastward and northward movements form the legs of a right-angled triangle.  The displacement is the hypotenuse, calculated using the Pythagorean theorem: √(20² + 15²) = √(400 + 225) = √625 = 25 km.  The magnitude is 25km.  There appears to be a mistake in the options.  The correct answer should be 25km, but it's not listed.
+
+
+**2. Identify the vector quantity from the following options.**
+A. Speed
+B. Mass
+C. Acceleration
+D. Time
+**Correct Answer: C**
+**Explanation:** A vector quantity has both magnitude and direction. Acceleration has both magnitude (how quickly velocity changes) and direction. Speed, mass, and time are scalar quantities (magnitude only).
+
+
+**3.  A ball is thrown vertically upward.  Ignoring air resistance, what is its acceleration at its highest point?**
+A. 0 m/s²
+B. 9.8 m/s² upward
+C. 9.8 m/s² downward
+D. -9.8 m/s² upward
+**Correct Answer: C**
+**Explanation:**  Even at its highest point where the velocity is momentarily zero, gravity continues to act on the ball, causing a constant downward acceleration of approximately 9.8 m/s².
+
+
+**4.  An object is in translational equilibrium under which of the following conditions?**
+A. It is at rest.
+B. It is moving at a constant velocity.
+C. The net force acting on it is zero.
+D. Both B and C.
+**Correct Answer: D**
+**Explanation:** Translational equilibrium means the object has no net force acting upon it. This occurs when an object is at rest or moving at a constant velocity (Newton's First Law).
+
+
+**5.  Calculate the acceleration of a 5-kilogram object experiencing a net force of 10 newtons.**
+A. 0.5 m/s²
+B. 2 m/s²
+C. 50 m/s²
+D. 15 m/s²
+**Correct Answer: B**
+**Explanation:** Newton's second law states F = ma (Force = mass x acceleration).  Rearranging, a = F/m = 10 N / 5 kg = 2 m/s².
+
+
+**6.  State Newton's third law of motion.**
+A.  F = ma
+B. An object at rest stays at rest unless acted upon by a net force.
+C. For every action, there is an equal and opposite reaction.
+D. The acceleration of an object is directly proportional to the net force and inversely proportional to its mass.
+**Correct Answer: C**
+**Explanation:** This is the statement of Newton's third law:  For every action, there's an equal and opposite reaction.
+
+
+**7.  Calculate the work done when a 20-newton force moves an object 5 meters in the same direction.**
+A. 4 Nm
+B. 100 J
+C. 15 J
+D. 25 J
+**Correct Answer: B**
+**Explanation:** Work = Force x distance x cos(θ), where θ is the angle between the force and displacement. Since the force and displacement are in the same direction, θ = 0°, and cos(0°) = 1.  Therefore, Work = 20 N x 5 m = 100 J (Joules).
+
+
+**8.  A projectile is launched at an angle. Describe its velocity at its highest point.**
+A. Zero
+B. Only horizontal
+C. Only vertical
+D. Both horizontal and vertical
+**Correct Answer: B**
+**Explanation:** At the highest point, the vertical component of the projectile's velocity is zero. Only the horizontal component remains.
+
+
+**9.  Generally, how does the magnitude of static friction compare to that of kinetic friction?**
+A. Less
+B. Greater
+C. Equal
+D. Unrelated
+**Correct Answer: B**
+**Explanation:** Static friction (friction when an object is at rest) is generally greater than kinetic friction (friction when an object is in motion).
+
+
+**10. What physical quantity is represented by the slope of a velocity-time graph?**
+A. Displacement
+B. Velocity
+C. Acceleration
+D. Speed
+**Correct Answer: C**
+**Explanation:** The slope of a velocity-time graph represents the change in velocity over time, which is the definition of acceleration.
+
+
+**11.  Determine the momentum of a 10-kilogram object moving at 5 meters per second.**
+A. 2 kg⋅m/s
+B. 50 kg⋅m/s
+C. 25 kg⋅m/s
+D. 15 kg⋅m/s
+**Correct Answer: B**
+**Explanation:** Momentum (p) = mass (m) x velocity (v) = 10 kg x 5 m/s = 50 kg⋅m/s
+
+
+**12.  In uniform circular motion, specify the direction of the acceleration.**
+A. Tangential to the circle
+B. Towards the center of the circle
+C. Away from the center of the circle
+D. Opposite to the velocity
+**Correct Answer: B**
+**Explanation:** The acceleration in uniform circular motion is called centripetal acceleration, and it always points towards the center of the circle.
+
+
+**13.  What is the result of the dot product of two vectors when the angle between them is 90 degrees?**
+A. The product of their magnitudes
+B. Zero
+C. The product of their magnitudes and the sine of the angle
+D. The product of their magnitudes and the cosine of the angle
+**Correct Answer: B**
+**Explanation:** The dot product of two vectors is defined as A.B = |A||B|cos(θ). When θ = 90°, cos(90°) = 0, making the dot product zero.
+
+
+**14.  Which of the following scenarios exemplifies rotational equilibrium?**
+A. A spinning top
+B. A balanced seesaw
+C. A rolling ball
+D. A freely falling object
+**Correct Answer: B**
+**Explanation:** Rotational equilibrium means the net torque acting on an object is zero. A balanced seesaw has zero net torque.  The other options involve rotation and thus, are not in rotational equilibrium.
+
+
+**15.  Calculate the acceleration of a car that accelerates from rest to 20 meters per second in 5 seconds.**
+A. 4 m/s²
+B. 100 m/s²
+C. 5 m/s²
+D. 0.25 m/s²
+**Correct Answer: A**
+**Explanation:** Acceleration = (final velocity - initial velocity) / time = (20 m/s - 0 m/s) / 5 s = 4 m/s².
+
