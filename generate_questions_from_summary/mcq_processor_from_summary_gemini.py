@@ -12,7 +12,7 @@ except Exception as e:
     genai = None
 
 def get_gemini_model():
-    return os.getenv("GEMINI_MODEL", "gemini-1.5-pro")
+    return os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 
 def configure_gemini():
     api_key = os.getenv("GEMINI_API_KEY")
