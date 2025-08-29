@@ -91,6 +91,11 @@ def extract_numbered_points(text):
         if p and p not in seen:
             seen.add(p)
             unique_points.append(p)
+
+    # Drop header/footer artifacts like "Numbered list"
+    artifact_pat = re.compile(r"\bnumbered\s+list\b", re.IGNORECASE)
+    unique_points = [p for p in unique_points if not artifact_pat.search(p)]
+
     return unique_points
 
 def generate_three_mcat_mcqs_for_point(point_text):
